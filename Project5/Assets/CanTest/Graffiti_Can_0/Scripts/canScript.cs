@@ -9,6 +9,9 @@ public class canScript : MonoBehaviour
     [Range(0.01f, 90f)] public float canTap = 15.0f;
     public float range = 1.0f;
     [SerializeField] private Transform controller;
+
+    [SerializeField] private Transform controller2;
+
     private Outline outline = null;
 
     [SerializeField] private float ControllerDistance = 1.0f;
@@ -25,8 +28,10 @@ public class canScript : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(controller.position, this.transform.position);
+        float dist2 = Vector3.Distance(controller2.position, this.transform.position);
 
-        if (dist <= ControllerDistance && outline == null)
+
+        if (( dist <= ControllerDistance || dist2 <= ControllerDistance) && outline == null)
         {
 
             outline = gameObject.AddComponent<Outline>();
@@ -36,11 +41,13 @@ public class canScript : MonoBehaviour
             outline.OutlineWidth = 10f;
 
         }
-        else if (dist > ControllerDistance)
+        else if (dist > ControllerDistance && dist2 > ControllerDistance)
         {
 
             Destroy(outline);
         }
 
+
+       
     }
 }

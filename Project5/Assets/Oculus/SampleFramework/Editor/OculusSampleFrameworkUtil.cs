@@ -42,6 +42,7 @@ public class OculusSampleFrameworkUtil
     {
       OVRPlugin.SendEvent("load", OVRPlugin.wrapperVersion.ToString(), "sample_framework");
     }
+    
   }
 #endif
 }

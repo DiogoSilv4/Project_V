@@ -10,7 +10,8 @@ public class MyDrawingController : MonoBehaviour {
     GameObject drawables;
     private AudioSource Paint_Spray;
 
-
+    private OVRGrabbable ovrGrabable;
+    public OVRInput.Button sprayButton;
     private void Awake()
     {
         drawables = GameObject.Find("Drawables");
@@ -21,9 +22,17 @@ public class MyDrawingController : MonoBehaviour {
         drawablesInScene = drawables.GetComponent<Drawables>().AllDrawables;
         Paint_Spray = GetComponentInParent<AudioSource>();
 
+        ovrGrabable = GetComponentInParent<OVRGrabbable>();
+
+
     }
     // Update is called once per frame
     void Update () {
+
+        //if (ovrGrabable.isGrabbed && OVRInput.GetDown(sprayButton) )
+        //{
+
+        //}
 
 
         if (Input.GetKey("space"))
@@ -31,7 +40,7 @@ public class MyDrawingController : MonoBehaviour {
             spot.UpdateDrawingMat();
 
             foreach (var drawable in drawablesInScene)
-            spot.Draw(drawable);
+                spot.Draw(drawable);
 
             sprayPaint.SetActive(true);
             Paint_Spray.mute = false;

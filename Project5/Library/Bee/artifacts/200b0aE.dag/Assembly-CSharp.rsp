@@ -301,9 +301,9 @@
 -r:"/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/NetStandard/Extensions/2.0.0/System.Numerics.Vectors.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
 -r:"/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll"
--r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Project5/Library/PackageCache/com.unity.analytics@3.6.11/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
--r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Project5/Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Editor.dll"
--r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Project5/Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Tracker.dll"
+-r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5/Library/PackageCache/com.unity.analytics@3.6.11/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll"
+-r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5/Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Editor.dll"
+-r:"/Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5/Library/PackageCache/com.unity.analytics@3.6.11/Unity.Analytics.Tracker.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Analytics.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Oculus.AudioManager.Audio.Editor.ref.dll"
 -r:"Library/Bee/artifacts/200b0aE.dag/Oculus.AudioManager.ref.dll"
@@ -501,6 +501,8 @@
 "Assets/Oculus/SampleFramework/Usage/Passthrough/Scripts/SPPquad.cs"
 "Assets/Oculus/SampleFramework/Usage/StartScene/Scripts/StartMenu.cs"
 "Assets/Resources/QuickOutline/Scripts/Outline.cs"
+"Assets/Scripts/mouseLook.cs"
+"Assets/Scripts/PlayerMovement.cs"
 -langversion:8.0
 
 /deterministic
