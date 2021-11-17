@@ -370,6 +370,9 @@
 "Assets/Oculus/SampleFramework/Editor/BuildSamples.cs"
 "Assets/Oculus/SampleFramework/Editor/OculusSampleFrameworkUtil.cs"
 "Assets/Oculus/SampleFramework/Usage/OVROverlayCanvas/Editor/OVROverlayCanvasEditor.cs"
+"Assets/UI/Assets/Editor/AnyUiMeshInspector.cs"
+"Assets/UI/Assets/Editor/AnyUiPrepareCanvas.cs"
+"Assets/UI/Assets/Editor/AnyUiSceneViewLiveEditing.cs"
 -langversion:8.0
 
 /deterministic

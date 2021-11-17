@@ -3,12 +3,17 @@ Library/Bee/artifacts/movedfrom/Unity.2D.Tilemap.Editor.ref.dll_1101534976988184
 Library/Bee/artifacts/movedfrom/Unity.Analytics.DataPrivacy.ref.dll_8776227257931606681.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.PlasticSCM.Editor.ref.dll_8857805651076598353.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.Rider.Editor.ref.dll_981917683283037860.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.Subsystem.Registration.ref.dll_7412934810055799307.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.TextMeshPro.Editor.ref.dll_14433059084915097691.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.TextMeshPro.ref.dll_8018160031689688246.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.Timeline.Editor.ref.dll_13672056288379623085.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.Timeline.ref.dll_15631961722012758340.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.VSCode.Editor.ref.dll_595892491345176404.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.VisualStudio.Editor.ref.dll_7956744097487737864.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.XR.Management.Editor.ref.dll_1231690776933044167.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.XR.Management.ref.dll_1326471945812635274.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.XR.Oculus.Editor.ref.dll_14484142535071028961.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.XR.Oculus.ref.dll_10300751130007043536.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEditor.Purchasing.ref.dll_7415408778852877812.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEditor.SpatialTracking.ref.dll_5661413260770839723.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEditor.UI.ref.dll_14081586543345723050.movedfrom
@@ -101,6 +106,6 @@ Library/Bee/artifacts/movedfrom/UnityEngine.VirtualTexturingModule.dll_113978416
 Library/Bee/artifacts/movedfrom/UnityEngine.VRModule.dll_15744863794552234626.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEngine.WindModule.dll_9336798478828066782.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEngine.XRModule.dll_954694092563689440.movedfrom
-Library/Bee/artifacts/movedfrom/Unity.Analytics.StandardEvents.dll_14781408991930478870.movedfrom
-Library/Bee/artifacts/movedfrom/Unity.Analytics.Editor.dll_367967264119076730.movedfrom
-Library/Bee/artifacts/movedfrom/Unity.Analytics.Tracker.dll_7001211798190073751.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.Analytics.StandardEvents.dll_5685876950654675605.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.Analytics.Editor.dll_18266758617069990649.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.Analytics.Tracker.dll_876920027980073128.movedfrom
