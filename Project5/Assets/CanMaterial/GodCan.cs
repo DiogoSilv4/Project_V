@@ -1,0 +1,70 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class GodCan : MonoBehaviour
+{
+    [SerializeField]
+    private PlayerMovement plyrScpt;
+    [SerializeField]
+    private mouseLook LookScript;
+
+    private bool CanGrabbed;
+    private bool thisOne = false;
+    private GameObject can;
+
+    public FlexibleColorPicker picker;
+    public GameObject background;
+
+    [SerializeField]
+    private GameObject GodCanUI;
+
+    [SerializeField]
+    private Transform UI;
+
+    [SerializeField]
+    private Transform placeToBe;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        CanGrabbed = plyrScpt.IsCanGrabbed;
+        can =  plyrScpt.currentCan;
+        
+        if (can == this.gameObject && CanGrabbed)
+        {
+            thisOne = true;
+            //Debug.Log("GodCan");
+        }
+        else
+        {
+            thisOne = false;
+        }
+
+        if (thisOne && Input.GetKeyDown(KeyCode.N))
+        {
+            UI.position = placeToBe.position;
+            UI.rotation = placeToBe.rotation;
+
+
+            GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+            //Debug.Log("OpenUI");
+            plyrScpt.canWalk = !plyrScpt.canWalk;
+            LookScript.canLook = !LookScript.canLook;
+
+            
+        }
+
+        background.GetComponent<Image>().color = picker.color;
+        GetComponent<canScript>().CanColor = picker.color;
+
+    }
+}

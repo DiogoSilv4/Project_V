@@ -14,6 +14,12 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private mouseLook LookScript;
 
+    [SerializeField]
+    private Transform UI;
+
+    [SerializeField]
+    private Transform placeToBe;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,12 +29,12 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.M) && isOpen == false)
+        if (Input.GetKeyDown(KeyCode.M) && isOpen == false)
         {
             isOpen = true;
             OpenMenu();
 
-        }else if (Input.GetKey(KeyCode.M) && isOpen == true)
+        }else if (Input.GetKeyDown(KeyCode.M) && isOpen == true)
         {
             isOpen = false;
             CloseMenu();
@@ -38,6 +44,10 @@ public class Menu : MonoBehaviour
 
     void OpenMenu()
     {
+        UI.position = placeToBe.position;
+        UI.rotation = placeToBe.rotation;
+
+
         menu.SetActive(true);
         PlayerScript.canWalk = false;
         LookScript.canLook = false;

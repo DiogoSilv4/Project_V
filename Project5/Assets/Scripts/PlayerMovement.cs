@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Transform CanSpot;
 
-    private GameObject currentCan = null;
+    public GameObject currentCan = null;
     // Start is called before the first frame update
 
     public bool IsCanGrabbed = false;
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         {
             GrabCan(currentCan);
 
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 DropCan(currentCan);
                 
@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
             if ( dist <= closeDistance)
             {
 
-                if (Input.GetKey(KeyCode.E))
+                if (Input.GetKeyDown(KeyCode.E))
                 {
                     currentCan = taggedObjects[i];
 
