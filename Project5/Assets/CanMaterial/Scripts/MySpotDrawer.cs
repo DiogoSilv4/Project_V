@@ -21,8 +21,8 @@ public class MySpotDrawer : MonoBehaviour {
 
     void Start()
     {
-        color = GetComponentInParent<canScript>().CanColor;
-        angle = GetComponentInParent<canScript>().canTap;
+       
+       
         range = GetComponentInParent<canScript>().range;
 
     }
@@ -31,6 +31,8 @@ public class MySpotDrawer : MonoBehaviour {
     void Update()
     {
         sprayPaint.startColor = color;
+        color = GetComponentInParent<canScript>().CanColor;
+        angle = GetComponentInParent<canScript>().canTap;
 
     }
 

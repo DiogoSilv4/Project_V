@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class Menu : MonoBehaviour
 {
-    private bool isOpen = false;
+    public bool isOpen = false;
     [SerializeField]
     private GameObject menu;
+
+    [SerializeField]
+    private GameObject eventS;
 
     [SerializeField]
     private PlayerMovement PlayerScript;
@@ -49,12 +52,17 @@ public class Menu : MonoBehaviour
 
 
         menu.SetActive(true);
+        //eventS.SetActive(true);
+
+
         PlayerScript.canWalk = false;
         LookScript.canLook = false;
     }
     void CloseMenu()
     {
         menu.SetActive(false);
+        //eventS.SetActive(false);
+
         PlayerScript.canWalk = true;
         LookScript.canLook = true;
 

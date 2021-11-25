@@ -10,7 +10,7 @@ public class Drawables : MonoBehaviour
     void Awake()
     {
 
-        Debug.Log("Received");
+        //Debug.Log("Received");
 
     }
 }

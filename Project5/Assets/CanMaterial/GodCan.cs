@@ -21,15 +21,20 @@ public class GodCan : MonoBehaviour
     private GameObject GodCanUI;
 
     [SerializeField]
+    private GameObject eventS;
+
+    [SerializeField]
     private Transform UI;
 
     [SerializeField]
     private Transform placeToBe;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        picker.color = Color.yellow;
 
     }
 
@@ -56,15 +61,26 @@ public class GodCan : MonoBehaviour
 
 
             GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+            //eventS.SetActive(!eventS.activeInHierarchy);
+            
+
             //Debug.Log("OpenUI");
             plyrScpt.canWalk = !plyrScpt.canWalk;
             LookScript.canLook = !LookScript.canLook;
 
-            
+        }
+        else if (!thisOne )
+        {
+            GodCanUI.SetActive(false);
+            //eventS.SetActive(false);
+
+            plyrScpt.canWalk = true;
+            LookScript.canLook = true;
+
         }
 
         background.GetComponent<Image>().color = picker.color;
-        GetComponent<canScript>().CanColor = picker.color;
+        this.GetComponent<canScript>().CanColor = picker.color;
 
     }
 }

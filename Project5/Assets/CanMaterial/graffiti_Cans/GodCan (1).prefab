@@ -5276,8 +5276,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8422306846376496051}
   m_LocalRotation: {x: 0.099057876, y: 0.3875932, z: 0.20329025, w: 0.8936622}
-  m_LocalPosition: {x: 0, y: -0.30277887, z: 0}
-  m_LocalScale: {x: 1.8785924, y: 1.8785926, z: 1.8785926}
+  m_LocalPosition: {x: 0.02, y: -0.30277887, z: 0.39}
+  m_LocalScale: {x: 8.36553, y: 8.365531, z: 8.365531}
   m_Children: []
   m_Father: {fileID: 4383856146230665326}
   m_RootOrder: 0
@@ -5319,6 +5319,8 @@ MonoBehaviour:
   Can_shake: {fileID: 5115946599216691773}
   sprayButton: 0
   magnitudeOfVelocityToSound: 12
+  plyrScpt: {fileID: 0}
+  ThisCan: {fileID: 2452020921979816906}
 --- !u!82 &5115946599216691773
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5527,6 +5529,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -1018664272722485354, guid: d3242244b1f3e45c1afd60fe58ecb896,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d3242244b1f3e45c1afd60fe58ecb896,
         type: 3}
       propertyPath: m_Name
@@ -5536,6 +5543,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 4424396828587804706, guid: d3242244b1f3e45c1afd60fe58ecb896,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6317578925029434746, guid: d3242244b1f3e45c1afd60fe58ecb896,
         type: 3}

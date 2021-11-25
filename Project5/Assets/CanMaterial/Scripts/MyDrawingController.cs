@@ -16,7 +16,18 @@ public class MyDrawingController : MonoBehaviour {
     public OVRInput.Button sprayButton;
     private Vector3 posLastFrame;
 
+
+
     public float magnitudeOfVelocityToSound = 1.0f;
+
+    [SerializeField]
+    private PlayerMovement plyrScpt;
+    private bool CanGrabbed;
+    private GameObject can;
+
+    [SerializeField]
+    private GameObject ThisCan;
+
     private void Awake()
     {
         drawables = GameObject.Find("Drawables");
@@ -56,9 +67,12 @@ public class MyDrawingController : MonoBehaviour {
         //{
 
         //}
+        CanGrabbed = plyrScpt.IsCanGrabbed;
+        can = plyrScpt.currentCan;
+        
 
 
-        if (Input.GetKey("space"))
+        if (Input.GetKey("space") && can == ThisCan && CanGrabbed )
         {
             spot.UpdateDrawingMat();
 

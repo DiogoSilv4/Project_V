@@ -253,6 +253,8 @@ MonoBehaviour:
   Can_shake: {fileID: 5126929520210429903}
   sprayButton: 0
   magnitudeOfVelocityToSound: 12
+  plyrScpt: {fileID: 0}
+  ThisCan: {fileID: 3449291275575443901}
 --- !u!82 &5126929520210429903
 AudioSource:
   m_ObjectHideFlags: 0
