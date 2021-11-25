@@ -9,6 +9,10 @@ public class GodCan : MonoBehaviour
     private PlayerMovement plyrScpt;
     [SerializeField]
     private mouseLook LookScript;
+    [SerializeField]
+    private Menu menuScript;
+
+
 
     private bool CanGrabbed;
     private bool thisOne = false;
@@ -69,14 +73,17 @@ public class GodCan : MonoBehaviour
             LookScript.canLook = !LookScript.canLook;
 
         }
-        else if (!thisOne )
+        else if (!thisOne)
         {
             GodCanUI.SetActive(false);
             //eventS.SetActive(false);
 
+            
+
+        }else if(!thisOne && !menuScript.isOpen)
+        {
             plyrScpt.canWalk = true;
             LookScript.canLook = true;
-
         }
 
         background.GetComponent<Image>().color = picker.color;
