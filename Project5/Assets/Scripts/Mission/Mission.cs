@@ -34,7 +34,7 @@ public class Mission : MonoBehaviour
         }else if (Missions[currentMissionValue].Type == "paint")
         {
             
-            if (checkDistance(Missions[currentMissionValue].Objects[1], Missions[currentMissionValue].Place))
+            if (checkDistance(Missions[currentMissionValue].Objects[1], Missions[currentMissionValue].Place.transform))
             {
                 
                 paintWall();
@@ -77,19 +77,22 @@ public class Mission : MonoBehaviour
     {
         //UI_Mission_Stat.text = Missions[currentMissionValue].Name;
 
-        Instantiate(sphere_prefab, Missions[currentMissionValue].Place);
+        //Instantiate(sphere_prefab, Missions[currentMissionValue].Place);
+
+        Missions[currentMissionValue].Place.SetActive(true);
 
         var count = 0;
         for(int i = 0; i < Missions[currentMissionValue].Objects.Length; i++)
         {
             
-            if (checkDistance(Missions[currentMissionValue].Objects[i], Missions[currentMissionValue].Place))
+            if (checkDistance(Missions[currentMissionValue].Objects[i], Missions[currentMissionValue].Place.transform))
             {
                 count++; 
             }
         }
         if (count == Missions[currentMissionValue].Objects.Length)
         {
+            Missions[currentMissionValue].Place.SetActive(false);
             MissionCompleted();
         }
 
@@ -102,7 +105,7 @@ public class Mission : MonoBehaviour
     {
         distance = Vector3.Distance(_object.transform.position, place.position);
 
-        if (distance < 1.0f)
+        if (distance < 2.0f)
         {
             return true;
         }

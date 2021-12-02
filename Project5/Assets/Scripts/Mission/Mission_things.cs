@@ -12,7 +12,7 @@ public class Mission_things
     [SerializeField]
     public GameObject[] Objects;
     [SerializeField]
-    public Transform Place;
+    public GameObject Place;
     public bool isCompleted;
 }
 public class Paint_mission
