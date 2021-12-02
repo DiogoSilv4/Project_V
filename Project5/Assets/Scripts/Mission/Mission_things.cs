@@ -6,12 +6,26 @@ using UnityEngine;
 public class Mission_things
 {
     [SerializeField]
+    public string Type;
+    [SerializeField]
     public string Name;
-    
-    
     [SerializeField]
     public GameObject[] Objects;
     [SerializeField]
     public Transform Place;
     public bool isCompleted;
 }
+public class Paint_mission
+{
+    [SerializeField]
+    public string Name;
+    [SerializeField]
+    public GameObject[] Objects;
+}
+//public class missionTopic
+//{
+//    [SerializeField]
+//    public string Topic;
+
+    
+//}

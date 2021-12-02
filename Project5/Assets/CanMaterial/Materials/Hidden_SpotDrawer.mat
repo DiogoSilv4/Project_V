@@ -33,8 +33,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Emission: 3.6209745
+    - _Emission: 7.3357177
     m_Colors:
-    - _Color: {r: 0.9820125, g: 1, b: 0, a: 1}
-    - _DrawerPos: {r: -0.26445007, g: 1.5299952, b: 3.8511903, a: 0}
+    - _Color: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+    - _DrawerPos: {r: -68.87377, g: 4.7830267, b: 14.946264, a: 0}
   m_BuildTextureStacks: []

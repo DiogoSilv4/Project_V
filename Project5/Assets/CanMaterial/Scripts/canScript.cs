@@ -5,8 +5,11 @@ using UnityEngine;
 public class canScript : MonoBehaviour
 {
     [SerializeField] private GameObject CanSpot;
+
     public Color CanColor = Color.green;
+
     [Range(0.01f, 90f)] public float canTap = 15.0f;
+
     public float range = 1.0f;
     [SerializeField] private Transform controller;
 
@@ -42,7 +45,7 @@ public class canScript : MonoBehaviour
         outline.OutlineColor = CanColor;
         outline.OutlineWidth = 10f;
 
-
+        rayDistance = range + 1.76f ;
     }
 
     // Update is called once per frame
@@ -77,12 +80,14 @@ public class canScript : MonoBehaviour
         if (Physics.Raycast(ray, out objectHit, rayDistance) && movementScript.IsCanGrabbed)
         {
             Debug.DrawLine(startPoint, objectHit.point, Color.green);
-
+            //Debug.Log(objectHit.distance);
             
             hitOnWall.transform.position = objectHit.point;
-            //hitOnWall.transform.rotation = Quaternion.Euler(objectHit.normal);
-            hitOnWall.SetActive(true);
+            hitOnWall.transform.rotation = Quaternion.Euler(objectHit.normal + new Vector3(0,90,0));
 
+            hitOnWall.transform.localScale = new Vector3(1, 1, 1) * (objectHit.distance * 1.313395f / 0.768f );
+
+            hitOnWall.SetActive(true);
         }
         else
         {
