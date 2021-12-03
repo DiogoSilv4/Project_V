@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEditor.Animations;
 
 public class MoveTo : MonoBehaviour
 {
+    private NavMeshAgent agent;
+    private Animator animator;
 
-    [SerializeField] private NavMeshAgent cube;
+    
 
     private Transform poiDestiny;
     private int poiNumber = 0;
@@ -14,19 +17,22 @@ public class MoveTo : MonoBehaviour
 
     [SerializeField] public List<Transform> points = new List<Transform>();
 
-    public Transform GetPOIIndex(int index)
-    {
-        if (index >= points.Count)
-        {
-            return null;
-        }
-        return points[index];
-    }
+    [SerializeField] private float[] secondsWaiting;
+
+    //public Transform GetPOIIndex(int index)
+    //{
+    //    if (index >= points.Count)
+    //    {
+    //        return null;
+    //    }
+    //    return points[index];
+    //}
 
     // Start is called before the first frame update
     void Start()
     {
-
+        agent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,33 +40,67 @@ public class MoveTo : MonoBehaviour
     {
         poiDestiny = points[poiNumber];
         moveCube(poiDestiny);
-        hasArrived(poiDestiny);
+        hasArrived();
+        idleToWalking();
     }
     private void moveCube(Transform poiTransform)
     {
-        cube.SetDestination(poiTransform.position);
+        agent.SetDestination(poiTransform.position);
         // cube.jump;
     }
-    private void hasArrived(Transform poiTransform)
+
+
+    IEnumerator Waiting()
     {
 
-        if (!cube.pathPending)
+        Debug.Log("nop");
+
+        yield return new WaitForSeconds(secondsWaiting[poiNumber]);
+
+        
+        number = points.Count - 1;
+        if (number == poiNumber)
         {
-            if (cube.remainingDistance <= cube.stoppingDistance)
+            poiNumber = 0;
+        }
+        else
+        {
+            poiNumber++;
+        }
+
+    }
+    private void idleToWalking()
+    {
+        //Debug.Log(agent.velocity.magnitude);
+        animator.SetFloat("speed", agent.velocity.magnitude);
+
+        if (agent.velocity.magnitude == 0)
+        {
+            animator.SetBool("Walking", false);
+        }
+        else
+        {
+            animator.SetBool("Walking", true);
+        }
+
+        //if (agent.remainingDistance <= 2)
+        //{
+        //    agent.speed = agent.remainingDistance;
+        //}
+    }
+
+    private void hasArrived()
+    {
+
+        if (!agent.pathPending)
+        {
+            if (agent.remainingDistance <= agent.stoppingDistance)
             {
-
-                if (!cube.hasPath || cube.velocity.sqrMagnitude == 0f)
+                
+                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
                 {
-                    number = points.Count - 1;
-                    if (number == poiNumber)
-                    {
-                        poiNumber = 0;
-                    }
-                    else
-                    {
-                        poiNumber++;
-                    }
-
+                    Debug.Log("why");
+                    Waiting();
                 }
             }
         }
