@@ -10,6 +10,8 @@ public class MyDrawable : MonoBehaviour
     RenderTexture[] pingPongRts;
     Mesh mesh;
 
+  
+
     void Start()
     {
         output = new RenderTexture(textureSize, textureSize, 0, RenderTextureFormat.ARGBHalf);
@@ -32,6 +34,7 @@ public class MyDrawable : MonoBehaviour
         mesh = GetComponent<MeshFilter>().sharedMesh;
         
         Graphics.CopyTexture(pingPongRts[0], output);
+
     }
 
     private void OnDestroy()

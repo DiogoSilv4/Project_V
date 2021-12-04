@@ -19,28 +19,25 @@ public class MoveTo : MonoBehaviour
 
     [SerializeField] private float[] secondsWaiting;
 
-    //public Transform GetPOIIndex(int index)
-    //{
-    //    if (index >= points.Count)
-    //    {
-    //        return null;
-    //    }
-    //    return points[index];
-    //}
 
+    private bool canMove;
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        canMove = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         poiDestiny = points[poiNumber];
-        moveCube(poiDestiny);
-        hasArrived();
+        if (canMove)
+        {
+            moveCube(poiDestiny);
+            hasArrived();
+        }
         idleToWalking();
     }
     private void moveCube(Transform poiTransform)
@@ -53,11 +50,9 @@ public class MoveTo : MonoBehaviour
     IEnumerator Waiting()
     {
 
-        Debug.Log("nop");
-
         yield return new WaitForSeconds(secondsWaiting[poiNumber]);
-
         
+
         number = points.Count - 1;
         if (number == poiNumber)
         {
@@ -68,20 +63,14 @@ public class MoveTo : MonoBehaviour
             poiNumber++;
         }
 
+        canMove = true;
     }
     private void idleToWalking()
     {
         //Debug.Log(agent.velocity.magnitude);
         animator.SetFloat("speed", agent.velocity.magnitude);
 
-        if (agent.velocity.magnitude == 0)
-        {
-            animator.SetBool("Walking", false);
-        }
-        else
-        {
-            animator.SetBool("Walking", true);
-        }
+        
 
         //if (agent.remainingDistance <= 2)
         //{
@@ -96,12 +85,9 @@ public class MoveTo : MonoBehaviour
         {
             if (agent.remainingDistance <= agent.stoppingDistance)
             {
+                canMove = false;
+                StartCoroutine(Waiting());
                 
-                if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f)
-                {
-                    Debug.Log("why");
-                    Waiting();
-                }
             }
         }
     }

@@ -47,7 +47,7 @@ public class Mission : MonoBehaviour
 
     private void paintWall()
     {
-        wall = Missions[currentMissionValue].Objects[0].GetComponent<Renderer>().material.GetTexture(0);
+        wall = Missions[currentMissionValue].Objects[0].GetComponent<Renderer>().material.GetTexture("_MainText");
         Texture2D _wall = (Texture2D)wall;
         var pix_count = 0;
         Debug.Log("yyyy");

@@ -7,7 +7,7 @@ public class MyDrawingController : MonoBehaviour {
     private MySpotDrawer spot;
     private MyDrawable[] drawablesInScene;
     [SerializeField] private GameObject sprayPaint;
-    GameObject drawables;
+    private GameObject drawables;
     public AudioSource Paint_Spray;
     public AudioSource Can_shake;
 
@@ -28,6 +28,8 @@ public class MyDrawingController : MonoBehaviour {
     [SerializeField]
     private GameObject ThisCan;
 
+    private int uno = 1;
+
     private void Awake()
     {
         drawables = GameObject.Find("Drawables");
@@ -43,15 +45,22 @@ public class MyDrawingController : MonoBehaviour {
 
         posLastFrame = transform.position;
 
+
         spot.UpdateDrawingMat();
-        for (int i = 0; i < drawablesInScene.Length; i++)
-        {
-            spot.Draw(drawablesInScene[i]);
-        }
+
+        
 
     }
     // Update is called once per frame
     void Update () {
+
+        
+        if (uno == 1)
+        {
+            foreach (var drawable in drawablesInScene)
+                spot.Draw(drawable);
+            uno++;
+        }
 
         if (Vector3.Distance(posLastFrame , transform.position )/Time.deltaTime > magnitudeOfVelocityToSound)
         {
@@ -72,6 +81,7 @@ public class MyDrawingController : MonoBehaviour {
         //{
 
         //}
+
         CanGrabbed = plyrScpt.IsCanGrabbed;
         can = plyrScpt.currentCan;
         
