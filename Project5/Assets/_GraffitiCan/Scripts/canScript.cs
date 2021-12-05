@@ -29,9 +29,9 @@ public class canScript : MonoBehaviour
     [SerializeField]
     private GameObject hitOnWall;
 
-    [SerializeField]
-    private MyDrawingController drawingScript;
-    [SerializeField]
+    
+
+    
     private PlayerMovement movementScript;
 
     private float firstCircleSize;
@@ -39,6 +39,7 @@ public class canScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>(); 
         //outline = this.GetComponent<Outline>();
         //outline.enabled = false;
         outline = gameObject.AddComponent<Outline>();

@@ -20,7 +20,6 @@ public class MyDrawingController : MonoBehaviour {
 
     public float magnitudeOfVelocityToSound = 1.0f;
 
-    [SerializeField]
     private PlayerMovement plyrScpt;
     private bool CanGrabbed;
     private GameObject can;
@@ -33,6 +32,7 @@ public class MyDrawingController : MonoBehaviour {
     private void Awake()
     {
         drawables = GameObject.Find("Drawables");
+        plyrScpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
     void Start()
     {
@@ -87,7 +87,7 @@ public class MyDrawingController : MonoBehaviour {
         
 
 
-        if (Input.GetKey("space") && can == ThisCan && CanGrabbed )
+        if (Input.GetKey(KeyCode.Mouse1) && can == ThisCan && CanGrabbed )
         {
             spot.UpdateDrawingMat();
 

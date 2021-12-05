@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-
-    [SerializeField] private CharacterController controller;
-
-    [SerializeField] private float speed = 12f;
-
     private GameObject[] taggedObjects;
     [SerializeField] private float closeDistance;
-
 
     [SerializeField] private Transform CanSpot;
 
     public GameObject currentCan = null;
-    // Start is called before the first frame update
-
     public bool IsCanGrabbed = false;
-
     public bool canWalk = true;
-
+    public bool canLook = true;
 
     void Start()
     {
@@ -31,11 +22,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (canWalk)
-        {
-            movement();
-        }
-        
+        cursorLock();
+
+
         if (currentCan == null)
         {
             closeToCan();
@@ -52,31 +41,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void movement()
-    {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-
-        Vector3 move = transform.right * x + transform.forward * z;
-
-        controller.Move(move * speed * Time.deltaTime);
-
-        //if (Input.GetKey(KeyCode.LeftControl))
-        //{
-        //    this.transform.position = new Vector3(this.transform.position.x, 0, this.transform.position.z);
-
-        //}
-        //else
-        //{
-        //    this.transform.position = new Vector3(this.transform.position.x, 1, this.transform.position.z);
-
-        //}
-    }
+   
 
     private void closeToCan()
     {
-        
-
         for (int i = 0; i < taggedObjects.Length; i++)
         {
             float dist = Vector3.Distance(this.transform.position, taggedObjects[i].transform.position);
@@ -86,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     currentCan = taggedObjects[i];
-
                 }
             }
             else 
@@ -120,11 +87,19 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
-
-    void ApplyForce(Rigidbody can, Transform pos)
+    
+    private void cursorLock()
     {
-        Vector3 direction =  - pos.position + can.transform.position  ;
-        can.AddForce(direction * -20f);
+        if (canLook)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
    

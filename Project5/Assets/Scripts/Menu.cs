@@ -8,14 +8,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
-    [SerializeField]
-    private GameObject eventS;
-
-    [SerializeField]
+    
     private PlayerMovement PlayerScript;
 
-    [SerializeField]
-    private mouseLook LookScript;
 
     [SerializeField]
     private Transform UI;
@@ -23,10 +18,12 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private Transform placeToBe;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -42,29 +39,23 @@ public class Menu : MonoBehaviour
             isOpen = false;
             CloseMenu();
         }
-
     }
-
     void OpenMenu()
     {
         UI.position = placeToBe.position;
         UI.rotation = placeToBe.rotation;
 
-
         menu.SetActive(true);
-        //eventS.SetActive(true);
-
 
         PlayerScript.canWalk = false;
-        LookScript.canLook = false;
+        PlayerScript.canLook = false;
     }
     void CloseMenu()
     {
         menu.SetActive(false);
-        //eventS.SetActive(false);
 
         PlayerScript.canWalk = true;
-        LookScript.canLook = true;
+        PlayerScript.canLook = true;
 
     }
 }

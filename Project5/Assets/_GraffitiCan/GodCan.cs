@@ -5,10 +5,9 @@ using UnityEngine.UI;
 
 public class GodCan : MonoBehaviour
 {
-    [SerializeField]
+    
     private PlayerMovement plyrScpt;
-    [SerializeField]
-    private mouseLook LookScript;
+
     [SerializeField]
     private Menu menuScript;
 
@@ -40,6 +39,8 @@ public class GodCan : MonoBehaviour
     {
         picker.color = Color.yellow;
 
+        plyrScpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
     }
 
     // Update is called once per frame
@@ -65,25 +66,21 @@ public class GodCan : MonoBehaviour
 
 
             GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
-            //eventS.SetActive(!eventS.activeInHierarchy);
             
 
             //Debug.Log("OpenUI");
             plyrScpt.canWalk = !plyrScpt.canWalk;
-            LookScript.canLook = !LookScript.canLook;
+            plyrScpt.canLook = !plyrScpt.canLook;
 
         }
         else if (!thisOne)
         {
             GodCanUI.SetActive(false);
-            //eventS.SetActive(false);
-
-            
 
         }else if(!thisOne && !menuScript.isOpen)
         {
             plyrScpt.canWalk = true;
-            LookScript.canLook = true;
+            plyrScpt.canLook = true;
         }
 
         background.GetComponent<Image>().color = picker.color;
