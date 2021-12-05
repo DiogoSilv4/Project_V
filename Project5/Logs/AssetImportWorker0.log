@@ -23,25 +23,688 @@ AssetImportWorker0
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-55843
+61490
 Successfully changed project path to: /Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5
 /Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 843.72 ms, found 6 plugins.
-Preloading 1 native plugins for Editor in 125.36 ms.
+Refreshing native plugins compatible for Editor in 469.32 ms, found 6 plugins.
+Preloading 1 native plugins for Editor in 17.90 ms.
 Initialize engine version: 2021.1.20f1 (be552157821d)
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path /Users/diogomontalvao/Desktop/Faculdade/5º Semestre/Project V/Github/ProjectV/Project5/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
-2021-12-04 22:38:08.729 Unity[1369:7753222] Color LCD preferred device: Intel(R) Iris(TM) Graphics 540 (low power)
-2021-12-04 22:38:08.730 Unity[1369:7753222] Metal devices available: 1
-2021-12-04 22:38:08.730 Unity[1369:7753222] 0: Intel(R) Iris(TM) Graphics 540 (low power)
-2021-12-04 22:38:08.731 Unity[1369:7753222] Using device Intel(R) Iris(TM) Graphics 540 (low power)
+2021-12-05 17:08:14.046 Unity[8031:8055436] Color LCD preferred device: Intel(R) Iris(TM) Graphics 540 (low power)
+2021-12-05 17:08:14.046 Unity[8031:8055436] Metal devices available: 1
+2021-12-05 17:08:14.046 Unity[8031:8055436] 0: Intel(R) Iris(TM) Graphics 540 (low power)
+2021-12-05 17:08:14.047 Unity[8031:8055436] Using device Intel(R) Iris(TM) Graphics 540 (low power)
 Initializing Metal device caps: Intel(R) Iris(TM) Graphics 540
 Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = '/Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56369
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56031
 Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Registered in 0.002632 seconds.
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 152.35 ms, found 6 plugins.
+Preloading 1 native plugins for Editor in 0.77 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in 10.699 seconds
+Domain Reload Profiling:
+	ReloadAssembly (10700ms)
+		BeginReloadAssembly (349ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (2ms)
+		EndReloadAssembly (925ms)
+			LoadAssemblies (348ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (365ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (415ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (153ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (196ms)
+				ProcessInitializeOnLoadMethodAttributes (52ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.022905 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.35 ms, found 6 plugins.
+Preloading 1 native plugins for Editor in 0.65 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.223 seconds
+Domain Reload Profiling:
+	ReloadAssembly (3224ms)
+		BeginReloadAssembly (602ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (62ms)
+		EndReloadAssembly (2499ms)
+			LoadAssemblies (807ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (700ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (124ms)
+			SetupLoadedEditorAssemblies (927ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (7ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (104ms)
+				ProcessInitializeOnLoadAttributes (581ms)
+				ProcessInitializeOnLoadMethodAttributes (230ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (15ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Shader 'Oculus/OVRMRCameraFrameLit': fallback shader 'Alpha-Diffuse' not found
+Launching external process: /Applications/Unity/Hub/Editor/2021.1.20f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.09 seconds
+Refreshing native plugins compatible for Editor in 1.60 ms, found 6 plugins.
+Preloading 1 native plugins for Editor in 0.67 ms.
+Unloading 2851 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 252.1 MB.
+System memory in use after: 252.1 MB.
+
+Unloading 82 unused Assets to reduce memory usage. Loaded Objects now: 3262.
+Total: 10.290680 ms (FindLiveObjects: 0.316828 ms CreateObjectMapping: 0.149655 ms MarkObjects: 9.509902 ms  DeleteObjects: 0.312576 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  path: Assets/NPC/New Folder
+  artifactKey: Guid(c02ce4eae35c64825bb5b28cebaa5699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder using Guid(c02ce4eae35c64825bb5b28cebaa5699) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd93bf06ea42f7685d94be9e957b8a67a') in 0.008134 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.883325 seconds.
+  path: Assets/NPC/New Folder/Bouncer.fbx
+  artifactKey: Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Bouncer.fbx using Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '182bf24edc345334436f35b152443ba9') in 3.039168 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.760618 seconds.
+  path: Assets/NPC/New Folder/Bouncer.fbx
+  artifactKey: Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Bouncer.fbx using Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c22f8d81799ddb211236fa687b9ce9b6') in 0.421892 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.919959 seconds.
+  path: Assets/NPC/New Folder/Bouncer.fbx
+  artifactKey: Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Bouncer.fbx using Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42264b2db21469b2ec300eccd3d39688') in 0.396530 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000294 seconds.
+  path: Assets/NPC/New Folder/Ch28_hair.mat
+  artifactKey: Guid(73dea091be0754b928cff25a1e5fd4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_hair.mat using Guid(73dea091be0754b928cff25a1e5fd4eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e0348bc3893fc68ea5f9e0955ea7103') in 0.631373 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000303 seconds.
+  path: Assets/NPC/New Folder/Ch28_body.mat
+  artifactKey: Guid(748d2016448594b9ca515a5cd1c7ebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_body.mat using Guid(748d2016448594b9ca515a5cd1c7ebbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ecc62faf16a64e24c9237d5581afd30e') in 0.026000 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.514824 seconds.
+  path: Assets/NPC/New Folder/Bouncer.fbx
+  artifactKey: Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Bouncer.fbx using Guid(d4920c58869734914a76f3f92d52477f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b5c0a2df652a2aa9b8cfc769a39e433') in 0.509987 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000899 seconds.
+  path: Assets/NPC/New Folder/Ch28_1001_Specular.png
+  artifactKey: Guid(9c945514207a54f19a7beb698628d08e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_1001_Specular.png using Guid(9c945514207a54f19a7beb698628d08e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12e11c6bf731ae1d7f00dc9ebf1a5127') in 1.678757 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000414 seconds.
+  path: Assets/NPC/New Folder/Ch28_1001_Diffuse.png
+  artifactKey: Guid(9dda7ac7166a4465b8b05a94b05daf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_1001_Diffuse.png using Guid(9dda7ac7166a4465b8b05a94b05daf52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '95c589dc9b76eb922d24ce20670ddc1e') in 0.084481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/NPC/New Folder/Ch28_1001_Glossiness.png
+  artifactKey: Guid(8341d96e6c4e345e39ad33d7090e6b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_1001_Glossiness.png using Guid(8341d96e6c4e345e39ad33d7090e6b4b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b94ae14df78f78da568d1c516d7b7f') in 0.064336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001402 seconds.
+  path: Assets/NPC/New Folder/Ch28_1001_Normal.png
+  artifactKey: Guid(441ac4d54023644b8b181ad8f0ba6701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_1001_Normal.png using Guid(441ac4d54023644b8b181ad8f0ba6701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c49af299ba50cb4dd0986d1b2c0d8f3') in 0.073045 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 369.492448 seconds.
+  path: Assets/NPC/New Folder/Ch28_1001_Normal.png
+  artifactKey: Guid(441ac4d54023644b8b181ad8f0ba6701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/New Folder/Ch28_1001_Normal.png using Guid(441ac4d54023644b8b181ad8f0ba6701) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb84af1bf3efc0750ac937df981dc681') in 0.205579 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 61.984034 seconds.
+  path: Assets/NPC/Remy/Bodymat.mat
+  artifactKey: Guid(781fde73b80c647ebb242da913a72aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Remy/Bodymat.mat using Guid(781fde73b80c647ebb242da913a72aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '598e1443052e2fe6cf8d139fddf7d000') in 0.091631 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000367 seconds.
+  path: Assets/NPC/Remy/Bottommat.mat
+  artifactKey: Guid(80c32f2bc92694a6eb0064e11bb5358b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Remy/Bottommat.mat using Guid(80c32f2bc92694a6eb0064e11bb5358b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2238364f70c1d1e74ba14c17ab85720b') in 0.085148 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000288 seconds.
+  path: Assets/NPC/Remy/Hairmat.mat
+  artifactKey: Guid(d09e98f8c6e2b47b491458bc18941991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Remy/Hairmat.mat using Guid(d09e98f8c6e2b47b491458bc18941991) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f231c9cb50c48725e33d0e90e1b3dbda') in 0.064806 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.682273 seconds.
+  path: Assets/NPC/Remy/Textures
+  artifactKey: Guid(8ac6c3d5f05124e24830633d6c389237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Remy/Textures using Guid(8ac6c3d5f05124e24830633d6c389237) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39c8c16e754981534a5c79e3bab83bb9') in 0.003975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.648839 seconds.
+  path: Assets/NPC/Remy/Materials
+  artifactKey: Guid(ac0eb466e737344c0b786ef8ea4c6493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Remy/Materials using Guid(ac0eb466e737344c0b786ef8ea4c6493) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '163809b22c14e1126dd5b465db199809') in 0.004926 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 55.916511 seconds.
+  path: Assets/NPC/Characters
+  artifactKey: Guid(206c2ec238fc640beb73499406c5336a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters using Guid(206c2ec238fc640beb73499406c5336a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4397c941295b4197eeb76cb564d24d81') in 0.002267 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.534644 seconds.
+  path: Assets/NPC/Characters/Models
+  artifactKey: Guid(5a8b5e8177b9f40da80d12d8a49f1899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Models using Guid(5a8b5e8177b9f40da80d12d8a49f1899) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3002fcc02a73643acd9fb595bbf34f4b') in 0.005029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2051.532069 seconds.
+  path: Assets/NPC/Characters/amelia.fbx
+  artifactKey: Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/amelia.fbx using Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5ea466a9eaf0d8630ec46acbb94430') in 1.068518 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000291 seconds.
+  path: Assets/NPC/Characters/Troy.fbx
+  artifactKey: Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Troy.fbx using Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58de69de56f14a79bce71b0f060d7bb2') in 0.243643 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000335 seconds.
+  path: Assets/NPC/Characters/chris.fbx
+  artifactKey: Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/chris.fbx using Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bef6afaf62da689079d9c8b17c4842d') in 0.359817 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000490 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '175212e2c1551108a9cab2f23e10ab47') in 0.199558 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.306307 seconds.
+  path: Assets/NPC/Characters/Security.fbx
+  artifactKey: Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Security.fbx using Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b87082fda6bbefcff045e6532f793f6') in 0.144241 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 24.448333 seconds.
+  path: Assets/NPC/Characters/Security.fbx
+  artifactKey: Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Security.fbx using Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc20fb6a5d424d86aabaea76d27f7379') in 0.138903 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.325666 seconds.
+  path: Assets/NPC/Characters/Ch18_Body.mat
+  artifactKey: Guid(1017b1b60a74c485fa94696a18cac7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_Body.mat using Guid(1017b1b60a74c485fa94696a18cac7be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '889ecf230f95474a705e36fbd3fa9ca2') in 0.089098 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000413 seconds.
+  path: Assets/NPC/Characters/Security.fbx
+  artifactKey: Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Security.fbx using Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '749f7afc006af0c84788565e621625bf') in 0.183537 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.541619 seconds.
+  path: Assets/NPC/Characters/Ch18_1001_Diffuse.png
+  artifactKey: Guid(325a496821a854798b2a192992c09f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_1001_Diffuse.png using Guid(325a496821a854798b2a192992c09f7e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5167e5cb825e9430c6922485f3d9ca9') in 0.209865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000361 seconds.
+  path: Assets/NPC/Characters/Security.fbx
+  artifactKey: Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Security.fbx using Guid(264aed7c8e1a74ff08f3a362ddc45068) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '276bfcf02df326f6ad468b6b2718d7a3') in 0.184650 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000700 seconds.
+  path: Assets/NPC/Characters/Ch18_1001_Glossiness.png
+  artifactKey: Guid(07f6831c622954b398b8d2ba7de25632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_1001_Glossiness.png using Guid(07f6831c622954b398b8d2ba7de25632) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '996772c2d8b0c73293c23cf1f28cd3e5') in 0.057444 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/NPC/Characters/Ch18_1001_Normal.png
+  artifactKey: Guid(5deaa7e3c7c7d4a12b564456dbaac740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_1001_Normal.png using Guid(5deaa7e3c7c7d4a12b564456dbaac740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '985294586a91f3f0732ff651f1781ab7') in 0.070118 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000541 seconds.
+  path: Assets/NPC/Characters/Ch18_1001_Specular.png
+  artifactKey: Guid(c292818bf1e3d42dabb262eab6405005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_1001_Specular.png using Guid(c292818bf1e3d42dabb262eab6405005) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eb8d6083faadf416b7d27207da1346ed') in 0.070087 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.404652 seconds.
+  path: Assets/NPC/Characters/Ch18_1001_Normal.png
+  artifactKey: Guid(5deaa7e3c7c7d4a12b564456dbaac740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch18_1001_Normal.png using Guid(5deaa7e3c7c7d4a12b564456dbaac740) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb16d3598df4e8d8dc7fd513465c882f') in 0.079754 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 76.231361 seconds.
+  path: Assets/Models/Details/Cargo/Containers/Cargo_container_v1/Textures/Cargo_container_v1.tga
+  artifactKey: Guid(25c4dd5f05f064f49a9b061c2ecd8fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/Cargo/Containers/Cargo_container_v1/Textures/Cargo_container_v1.tga using Guid(25c4dd5f05f064f49a9b061c2ecd8fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fcdbbc05cae129ce70959fa3840114b') in 2.582705 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000362 seconds.
+  path: Assets/Models/Details/StairsLat/textures/CNCR03LB.JPG
+  artifactKey: Guid(94736dc7fcdecff4bab53df30e9691f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/StairsLat/textures/CNCR03LB.JPG using Guid(94736dc7fcdecff4bab53df30e9691f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '682ca6fa7270e0a89c4ab64b7fa301e8') in 2.464451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000327 seconds.
+  path: Assets/Models/Details/StairsLat/textures/CNCR04LB.JPG
+  artifactKey: Guid(8e55aa529ae435a4f9cb2db99fd8a01f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/StairsLat/textures/CNCR04LB.JPG using Guid(8e55aa529ae435a4f9cb2db99fd8a01f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27cb2211f513ffd6e2bf71b165aa07af') in 0.088400 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001189 seconds.
+  path: Assets/Models/ConcreteBarrier/barrier.jpg
+  artifactKey: Guid(809d248dbd57e496e8d8ce7e8e8ab1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/ConcreteBarrier/barrier.jpg using Guid(809d248dbd57e496e8d8ce7e8e8ab1db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73bd17774944599d4819ab817ad82863') in 1.529582 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000244 seconds.
+  path: Assets/Models/Textures/BusStop_A.tga
+  artifactKey: Guid(34bdfe3da6be04dec9800dbe9ca17158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Textures/BusStop_A.tga using Guid(34bdfe3da6be04dec9800dbe9ca17158) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e88c0af57cc1f94567a856906fdeaa2') in 0.079099 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001606 seconds.
+  path: Assets/Models/Details/Brick/BRICK_PILE_TINY_10K_FBX/BRICK_PILE_TINY_10K.fbm/brick_pile_tiny_10k_BaseColor_8k.jpg
+  artifactKey: Guid(305c6538f16b3bf4ba8a22afefd19aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/Brick/BRICK_PILE_TINY_10K_FBX/BRICK_PILE_TINY_10K.fbm/brick_pile_tiny_10k_BaseColor_8k.jpg using Guid(305c6538f16b3bf4ba8a22afefd19aef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fae5a11c2d46e32e95f5dba32fc42fe9') in 0.067346 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001133 seconds.
+  path: Assets/Models/Textures/BusStopGlass_A.tga
+  artifactKey: Guid(4f69f725a3da34ef793968888f6684a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Textures/BusStopGlass_A.tga using Guid(4f69f725a3da34ef793968888f6684a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '680019ac0479412a99a03e180c64ed1a') in 0.138999 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000944 seconds.
+  path: Assets/Models/Details/StairsLat/textures/CNCR03L.JPG
+  artifactKey: Guid(6892299abde3baa49bff2a8bd53e05a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/StairsLat/textures/CNCR03L.JPG using Guid(6892299abde3baa49bff2a8bd53e05a7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a389ff1f37f1b6d15b9a2dfe824efcc') in 0.045428 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000350 seconds.
+  path: Assets/Models/Details/StairsLat/textures/CNCR04L.JPG
+  artifactKey: Guid(f3ca8810a1cfb084286dec62916b8fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Details/StairsLat/textures/CNCR04L.JPG using Guid(f3ca8810a1cfb084286dec62916b8fed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7af59ab6fc00da89bb4b7c04d601d464') in 0.070317 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 89.575896 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '694de51c530e27b17d20a372ac0896cf') in 0.352998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.824607 seconds.
+  path: Assets/NPC/Characters/Ch06_body.mat
+  artifactKey: Guid(5efa73607bbf648d5bd31d8e3dba1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_body.mat using Guid(5efa73607bbf648d5bd31d8e3dba1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '834851ab90f1a72a952efede858d7a95') in 0.176890 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.009884 seconds.
+  path: Assets/NPC/Characters/Ch06_body1.mat
+  artifactKey: Guid(24bf5f184f1384a8fb9594e663e56bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_body1.mat using Guid(24bf5f184f1384a8fb9594e663e56bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a55a2bb02c59dae035614a2bac6f900') in 0.033771 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.034064 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f838302fc5bc40c2c604731c980ead73') in 0.183109 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001450 seconds.
+  path: Assets/NPC/Characters/Ch06_eyelashes.mat
+  artifactKey: Guid(fcd78232b07e74bcaa1b490b5d1731a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_eyelashes.mat using Guid(fcd78232b07e74bcaa1b490b5d1731a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d13dd8168617092bb0023db68802566') in 0.074223 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.573732 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Diffuse.png
+  artifactKey: Guid(d8190bc508c30464898618119adcce53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Diffuse.png using Guid(d8190bc508c30464898618119adcce53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e25c3eedd3121efe3967cb05c5b7d38') in 0.378815 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000821 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Normal.png
+  artifactKey: Guid(42d24f2fd6c574da8a7d1087dc9e9698) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Normal.png using Guid(42d24f2fd6c574da8a7d1087dc9e9698) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b8889f8fc44f98a4634ed55621907e4') in 0.128686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.012169 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Glossiness.png
+  artifactKey: Guid(5ff5bd8a8729846edbf14247220e4220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Glossiness.png using Guid(5ff5bd8a8729846edbf14247220e4220) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '515b413e8f16187542360445cb2e2f13') in 0.041082 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000483 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Normal.png
+  artifactKey: Guid(323caef3f2dbb4896a36acf8279331bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Normal.png using Guid(323caef3f2dbb4896a36acf8279331bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5f955c53b29402ad3d951989435e5fc') in 0.070434 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000338 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Specular.png
+  artifactKey: Guid(d088e5c631eaa4da78641d737fd33a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Specular.png using Guid(d088e5c631eaa4da78641d737fd33a37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd933772dcb1f79e90232e69dee4d5c51') in 0.073700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000650 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Specular.png
+  artifactKey: Guid(38e0b1264bbb64292a57fd94b12f947b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Specular.png using Guid(38e0b1264bbb64292a57fd94b12f947b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97d961130295d45f814ad45357500f47') in 0.042728 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000345 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Diffuse.png
+  artifactKey: Guid(54647dffab59348a8bc9567a6ef58254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Diffuse.png using Guid(54647dffab59348a8bc9567a6ef58254) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1f03884253d0065fbbb928b38f84dcc') in 0.019053 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000309 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '872ce9d2516b8029d41cfeb2ed26ad3c') in 0.124451 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.004866 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Glossiness.png
+  artifactKey: Guid(45b7520409e8d4534a9e259a327f6551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Glossiness.png using Guid(45b7520409e8d4534a9e259a327f6551) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '62f7686c6d7b3ea9422bb410154d5bbb') in 0.026067 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 35.981751 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Diffuse.png
+  artifactKey: Guid(ee3915f0c23ed42479e98640b50743da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Diffuse.png using Guid(ee3915f0c23ed42479e98640b50743da) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '79ed28a942542769d8edd4bb036ad702') in 0.237662 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.013720 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Glossiness.png
+  artifactKey: Guid(a8402971494614556a0e178f36005d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Glossiness.png using Guid(a8402971494614556a0e178f36005d2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7314b9663ae395711b0f0fae64c3cdbe') in 0.097930 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001904 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Normal.png
+  artifactKey: Guid(b2e8f3ef184874ea1920a53e8d728fea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Normal.png using Guid(b2e8f3ef184874ea1920a53e8d728fea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3fb48cc1e192bc6592e516036247c51') in 0.090456 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000484 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Specular.png
+  artifactKey: Guid(f1f26119676a246cda93a8935b95590e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Specular.png using Guid(f1f26119676a246cda93a8935b95590e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a127ba3294f38cb81760e4456b9fe2b6') in 0.026698 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.008316 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6d6112ea3bdaac4c4828c715713d34e') in 0.130060 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000348 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Normal.png
+  artifactKey: Guid(b0d1f6a25f2584b629c016bd60de79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Normal.png using Guid(b0d1f6a25f2584b629c016bd60de79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a3123335d1461fa228ca9a663529829') in 0.027946 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000827 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Glossiness.png
+  artifactKey: Guid(1e9fff7f9671144f6b7c77a4204fe528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Glossiness.png using Guid(1e9fff7f9671144f6b7c77a4204fe528) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c35635ffe7854d8e29b3f1ca3c007f3') in 0.032207 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002859 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Diffuse.png
+  artifactKey: Guid(0d280cf547de34c8b959812d79671cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Diffuse.png using Guid(0d280cf547de34c8b959812d79671cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d555be436a68658d8e55fd469dd97db') in 0.025243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000534 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Specular.png
+  artifactKey: Guid(98e85b1bffef8433cb25f4dc626f4077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Specular.png using Guid(98e85b1bffef8433cb25f4dc626f4077) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00385286c58acc865bd0db218c904eab') in 0.057748 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 10.453690 seconds.
+  path: Assets/NPC/Characters/Ch06_body.mat
+  artifactKey: Guid(5efa73607bbf648d5bd31d8e3dba1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_body.mat using Guid(5efa73607bbf648d5bd31d8e3dba1349) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '23e9f30fd1b1c4bf1280cf80b2d77cee') in 0.103651 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.008764 seconds.
+  path: Assets/NPC/Characters/Ch06_body1.mat
+  artifactKey: Guid(24bf5f184f1384a8fb9594e663e56bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_body1.mat using Guid(24bf5f184f1384a8fb9594e663e56bc7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f86017967cac8acadf40d1366fe7421') in 0.075110 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000472 seconds.
+  path: Assets/NPC/Characters/Jonny.fbx
+  artifactKey: Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Jonny.fbx using Guid(d51773a77392d470a8b0732e1c8d08d5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f499ae2f403cd4c6f83a59e8dcaa76f') in 0.112204 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002660 seconds.
+  path: Assets/NPC/Characters/Ch06_eyelashes.mat
+  artifactKey: Guid(fcd78232b07e74bcaa1b490b5d1731a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_eyelashes.mat using Guid(fcd78232b07e74bcaa1b490b5d1731a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '358da55f2d60273b1de4c2d5b1de7f98') in 0.068481 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.087145 seconds.
+  path: Assets/NPC/Characters/Ch06_1001_Normal.png
+  artifactKey: Guid(b0d1f6a25f2584b629c016bd60de79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1001_Normal.png using Guid(b0d1f6a25f2584b629c016bd60de79ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd55fddc49d798a453a66a9797c7020f6') in 0.093076 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.040079 seconds.
+  path: Assets/NPC/Characters/Ch06_1002_Normal.png
+  artifactKey: Guid(b2e8f3ef184874ea1920a53e8d728fea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch06_1002_Normal.png using Guid(b2e8f3ef184874ea1920a53e8d728fea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8f5bc3ad97040f991827d32f8ec30fb1') in 0.028169 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 66.299173 seconds.
+  path: Assets/NPC/Characters/chris.fbx
+  artifactKey: Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/chris.fbx using Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd92525db9d9371bc51d17136c623c7bb') in 0.301604 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.430263 seconds.
+  path: Assets/NPC/Characters/Ch42_1001_Diffuse.png
+  artifactKey: Guid(91c538bee9e7245af9696730b7a8f741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1001_Diffuse.png using Guid(91c538bee9e7245af9696730b7a8f741) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cee4626a2f0a40dc650eacaab8dd580f') in 0.102449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002737 seconds.
+  path: Assets/NPC/Characters/chris.fbx
+  artifactKey: Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/chris.fbx using Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1707ff16202a6e688962bf18062f5e6f') in 0.425111 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000323 seconds.
+  path: Assets/NPC/Characters/Ch42_1001_Glossiness.png
+  artifactKey: Guid(1eca149c8b836478cb5a95d496c45403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1001_Glossiness.png using Guid(1eca149c8b836478cb5a95d496c45403) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f96b86bd132b7c6f12832c9cf6797348') in 0.046722 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.011680 seconds.
+  path: Assets/NPC/Characters/Ch42_1002_Diffuse.png
+  artifactKey: Guid(c038c8aa21c124e1cabc1363a79d7bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1002_Diffuse.png using Guid(c038c8aa21c124e1cabc1363a79d7bd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef3158e7cb20939b49f4aeaf5efd4e64') in 0.036357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.007959 seconds.
+  path: Assets/NPC/Characters/Ch42_1001_Normal.png
+  artifactKey: Guid(a013497349c704cd3a9d3475df8d4703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1001_Normal.png using Guid(a013497349c704cd3a9d3475df8d4703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f9f37683bed173057e4bd8ff617f432') in 0.056220 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000718 seconds.
+  path: Assets/NPC/Characters/Ch42_1001_Specular.png
+  artifactKey: Guid(a5656e6403c664da08aec226a05a2dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1001_Specular.png using Guid(a5656e6403c664da08aec226a05a2dbe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '40b809ad0562f0456428cbece54d7595') in 0.108151 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.158726 seconds.
+  path: Assets/NPC/Characters/Ch42_1001_Normal.png
+  artifactKey: Guid(a013497349c704cd3a9d3475df8d4703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_1001_Normal.png using Guid(a013497349c704cd3a9d3475df8d4703) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1b436e7b71109f23ba3cc29d5240549') in 0.079675 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.527872 seconds.
+  path: Assets/NPC/Characters/chris.fbx
+  artifactKey: Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/chris.fbx using Guid(0ec2d49b2af4c476d892be5519b3f8dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70103ccb46b7714e9fb00a95fd0ebd73') in 0.382484 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000330 seconds.
+  path: Assets/NPC/Characters/Ch42_Body.mat
+  artifactKey: Guid(284e9f18f382f4e559f4c4995ef39ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_Body.mat using Guid(284e9f18f382f4e559f4c4995ef39ca3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae2118b600782c3c82f49b205e750c9a') in 0.099694 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/NPC/Characters/Ch42_Hair.mat
+  artifactKey: Guid(d935cfb2c00b5492e8cc1f5fdebae5ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch42_Hair.mat using Guid(d935cfb2c00b5492e8cc1f5fdebae5ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '42c1b6ec8ed46eba0d63a081febd4be5') in 0.062260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 169.829299 seconds.
+  path: Assets/NPC/Characters/amelia.fbx
+  artifactKey: Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/amelia.fbx using Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09f4dcb5852392f837067ecce327c966') in 0.429576 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 11.921020 seconds.
+  path: Assets/NPC/Characters/amelia.fbx
+  artifactKey: Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/amelia.fbx using Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa8babcbca1b30933f4659aa8d340a5f') in 0.603336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000300 seconds.
+  path: Assets/NPC/Characters/Ch22_1002_Normal.png
+  artifactKey: Guid(e103338fc23744c5a8f9f1aa12fab03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1002_Normal.png using Guid(e103338fc23744c5a8f9f1aa12fab03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044ebb53d0e774c0ad8d54a546eb1413') in 0.082449 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002357 seconds.
+  path: Assets/NPC/Characters/Ch22_1001_Normal.png
+  artifactKey: Guid(1b94ae37dea9b438e8ba4a9cde991081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1001_Normal.png using Guid(1b94ae37dea9b438e8ba4a9cde991081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b0d1ab3ae138acf7f95b19ea6eea9a3') in 0.072509 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000844 seconds.
+  path: Assets/NPC/Characters/Ch22_1001_Specular.png
+  artifactKey: Guid(1d2cc8cb72deb4009977f3ff245d9bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1001_Specular.png using Guid(1d2cc8cb72deb4009977f3ff245d9bba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb6ad00fe1c8b91dc256da6956b50c1d') in 0.045636 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.005875 seconds.
+  path: Assets/NPC/Characters/Ch22_1002_Diffuse.png
+  artifactKey: Guid(5b3c1944bb374468aaaa9e33e2014fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1002_Diffuse.png using Guid(5b3c1944bb374468aaaa9e33e2014fc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73312f6d4217f1b2ceb3c435a938052f') in 0.029784 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000479 seconds.
+  path: Assets/NPC/Characters/Ch22_1001_Glossiness.png
+  artifactKey: Guid(e33999b886fe0444c85f4e61af38d2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1001_Glossiness.png using Guid(e33999b886fe0444c85f4e61af38d2ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a0e4bcd5588a2205809abed36d5bef0') in 0.045804 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000422 seconds.
+  path: Assets/NPC/Characters/Ch22_1001_Diffuse.png
+  artifactKey: Guid(2d699be6cf9df4b9185ff3ac8d61ab12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1001_Diffuse.png using Guid(2d699be6cf9df4b9185ff3ac8d61ab12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '836f64e145e479a44481688489b91345') in 0.036489 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.586318 seconds.
+  path: Assets/NPC/Characters/Ch22_1001_Normal.png
+  artifactKey: Guid(1b94ae37dea9b438e8ba4a9cde991081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1001_Normal.png using Guid(1b94ae37dea9b438e8ba4a9cde991081) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '589a30450b74aec51a84c8b636f8df60') in 0.112172 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/NPC/Characters/Ch22_1002_Normal.png
+  artifactKey: Guid(e103338fc23744c5a8f9f1aa12fab03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_1002_Normal.png using Guid(e103338fc23744c5a8f9f1aa12fab03b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '07cec0b7799ca28ee9be347bfecb3159') in 0.097982 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.100739 seconds.
+  path: Assets/NPC/Characters/amelia.fbx
+  artifactKey: Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/amelia.fbx using Guid(cc5fc5811fbee4f7792eaf2c41608506) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '605468eb77aac61e9f9bc1f679285e2b') in 0.358461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000306 seconds.
+  path: Assets/NPC/Characters/Ch22_hair.mat
+  artifactKey: Guid(d45ece0b892424e2791e56eeb41169fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_hair.mat using Guid(d45ece0b892424e2791e56eeb41169fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b493882cdb97274f3af4eb7a1fe9ea5f') in 0.109597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001041 seconds.
+  path: Assets/NPC/Characters/Ch22_body.mat
+  artifactKey: Guid(03581730f6ad24947a39492e5609d6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/NPC/Characters/Ch22_body.mat using Guid(03581730f6ad24947a39492e5609d6be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fdc4f5dce68a1593d0334673890c193') in 0.049350 seconds 
