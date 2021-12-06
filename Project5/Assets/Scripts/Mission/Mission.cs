@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Mission : MonoBehaviour
 {
 
-    [SerializeField] private string[] missions_names = new string[] { "goTo", "delivery", "paint" };
+    [SerializeField] private string[] missions_names = new string[] { "goTo", "delivery", "paint", "clean" };
     public List<Mission_things> Missions;
 
 
@@ -15,6 +15,8 @@ public class Mission : MonoBehaviour
 
     private Texture wall;
     public bool entered = false;
+
+    private Outline outline;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,8 @@ public class Mission : MonoBehaviour
             Missions[i].Place.SetActive(false);
         }
         AbleObjectives();
+
+       
     }
 
     // Update is called once per frame
@@ -32,8 +36,16 @@ public class Mission : MonoBehaviour
 
         if (Missions[currentMissionValue].Type == missions_names[1])
         {
-            currentMission();
+
+            deliveryMission();
+
         }
+
+        if (Missions[currentMissionValue].isCompleted == true)
+        {
+            MissionCompleted();
+        }
+                
     }
 
     public void paintWall()
@@ -61,17 +73,54 @@ public class Mission : MonoBehaviour
                 }
             }
         }
-        if (pix_count > 1)
+        Debug.Log(pix_count);
+        if (pix_count >= 0 )
         {
             MissionCompleted();
+            GameObject.FindGameObjectWithTag("block").SetActive(false);
         }
         else
         {
             Debug.Log("NOT");
         }
     }
+    private void cleanWall()
+    {
+        //wall = Missions[currentMissionValue].Objects[0].GetComponent<Renderer>().material.GetTexture("_MainText");
 
-    private void currentMission()
+        var mpb = new MaterialPropertyBlock();
+        Missions[currentMissionValue].Objects[0].GetComponent<Renderer>().GetPropertyBlock(mpb);
+        wall = mpb.GetTexture("_MainTex");
+        RenderTexture wall_ = (RenderTexture)wall;
+
+        Texture2D _wall = toTexture2D(wall_);
+
+        var pix_count = 0;
+
+        for (int x = 0; x < _wall.width; x++)
+        {
+            for (int y = 0; y < _wall.height; y++)
+            {
+                Color pix = _wall.GetPixel(x, y);
+                Debug.Log(pix);
+                if (pix == Color.black)
+                {
+                    pix_count++;
+                }
+            }
+        }
+        Debug.Log(pix_count);
+        if (pix_count > 150000)
+        {
+            MissionCompleted();
+           
+        }
+        else
+        {
+            Debug.Log("NOT");
+        }
+    }
+    private void deliveryMission()
     {
         //UI_Mission_Stat.text = Missions[currentMissionValue].Name;
 
@@ -82,11 +131,13 @@ public class Mission : MonoBehaviour
         var count = 0;
         for(int i = 0; i < Missions[currentMissionValue].Objects.Length; i++)
         {
-            
+
+            enable_outline(Missions[currentMissionValue].Objects[i], true);
             if (checkDistance(Missions[currentMissionValue].Objects[i], Missions[currentMissionValue].Place.transform)
                 && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsCanGrabbed == false)
             {
-                count++; 
+                count++;
+                enable_outline(Missions[currentMissionValue].Objects[i], false);
             }
         }
         if (count == Missions[currentMissionValue].Objects.Length)
@@ -136,11 +187,14 @@ public class Mission : MonoBehaviour
         }
         else
         {
-            this.gameObject.SetActive(false);
+            TasksCompleted();
         }
 
         AbleObjectives();
     }
+   
+
+
     public void OnCollision()
     {
 
@@ -152,6 +206,10 @@ public class Mission : MonoBehaviour
         {
             paintWall();
             entered = true;
+        }else if (Missions[currentMissionValue].Type == missions_names[3] && !entered)
+        {
+            cleanWall();
+            entered = true;
         }
 
     }
@@ -159,22 +217,28 @@ public class Mission : MonoBehaviour
 
     private void AbleObjectives()
     {
-        
-        if (Missions[currentMissionValue].Type == missions_names[0])
+        for (int i = 0; i < missions_names.Length; i++)
         {
-            Missions[currentMissionValue].Place.SetActive(true);
+            if (Missions[currentMissionValue].Type == missions_names[i])
+            {
+                Missions[currentMissionValue].Place.SetActive(true);
+            }
+            
         }
-        else if (Missions[currentMissionValue].Type == missions_names[1])
-        {
-            Missions[currentMissionValue].Place.SetActive(true);
-        }
-        else if (Missions[currentMissionValue].Type == missions_names[2])
-        {
-            Missions[currentMissionValue].Place.SetActive(true);
-        }
-        else
-        {
-            Missions[currentMissionValue].Place.SetActive(false);
-        }
+
+    }
+
+    private void enable_outline(GameObject out_object, bool set )
+    {
+        outline = out_object.GetComponent<Outline>();
+
+        outline.enabled = set;
+    }
+    
+    private void TasksCompleted()
+    {
+
+
+        this.gameObject.SetActive(false);
     }
 }

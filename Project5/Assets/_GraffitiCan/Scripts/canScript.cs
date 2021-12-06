@@ -10,15 +10,19 @@ public class canScript : MonoBehaviour
 
     [Range(0.01f, 90f)] public float canTap = 15.0f;
 
-    public float range = 1.0f;
-    [SerializeField] private Transform controller;
+    public float range = 1.5f;
 
-    [SerializeField] private Transform controller2;
+
+    //[SerializeField]
+    private Transform controller ;
+
+    //[SerializeField] 
+    private Transform controller2;
 
     
     private Outline outline;
 
-    [SerializeField] private float ControllerDistance = 1.0f;
+     private float ControllerDistance ;
 
     [SerializeField]
     private float rayDistance = 1.35f;
@@ -35,11 +39,18 @@ public class canScript : MonoBehaviour
     private PlayerMovement movementScript;
 
     private float firstCircleSize;
+    private float dist;
+    private float dist2;
+    public bool Player_close = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>(); 
+        controller = GameObject.FindGameObjectWithTag("Player").transform;
+        controller2 = GameObject.FindGameObjectWithTag("Player").transform;
+        movementScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        ControllerDistance = movementScript.closeDistance;
+
         //outline = this.GetComponent<Outline>();
         //outline.enabled = false;
         outline = gameObject.AddComponent<Outline>();
@@ -56,25 +67,15 @@ public class canScript : MonoBehaviour
     {
         changeVariable();
 
-        float dist = Vector3.Distance( transform.position, controller.position);
-        float dist2 = Vector3.Distance(controller2.position, transform.position);
+         dist = Vector3.Distance( transform.position, controller.position);
+         dist2 = Vector3.Distance(controller2.position, transform.position);
 
 
         //Debug.Log(movementScript.IsCanGrabbed);
 
-        if ( ( dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed )
-        {
+        enableOutline();
 
-            outline.enabled = true;
 
-        }
-        else if ((dist > ControllerDistance  && dist2 > ControllerDistance) || movementScript.IsCanGrabbed)
-        {
-            outline.enabled = false;
-
-            //Destroy(outline);
-        }
-        
 
         Vector3 startPoint = rayOrigin.position;
 
@@ -123,4 +124,23 @@ public class canScript : MonoBehaviour
             firstCircleSize = 2.211007f;
         }
     }
+    private void enableOutline()
+    {
+
+
+        if ((dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed)
+        {
+            Player_close = true;
+            outline.enabled = true;
+
+        }
+        else if ((dist > ControllerDistance && dist2 > ControllerDistance) || movementScript.IsCanGrabbed)
+        {
+            outline.enabled = false;
+            Player_close = false;
+
+
+        }
+    }
+        
 }

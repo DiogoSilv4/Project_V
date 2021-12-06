@@ -11,7 +11,6 @@ public class Menu : MonoBehaviour
     
     private PlayerMovement PlayerScript;
 
-
     [SerializeField]
     private Transform UI;
 

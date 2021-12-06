@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Can
   - Objective
+  - block
   layers:
   - Default
   - TransparentFX

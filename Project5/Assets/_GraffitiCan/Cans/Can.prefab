@@ -72,8 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 77949fb4400734dad9cf9d572b416b7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -253,7 +252,6 @@ MonoBehaviour:
   Can_shake: {fileID: 5126929520210429903}
   sprayButton: 0
   magnitudeOfVelocityToSound: 12
-  plyrScpt: {fileID: 0}
   ThisCan: {fileID: 3449291275575443901}
 --- !u!82 &5126929520210429903
 AudioSource:
@@ -5268,8 +5266,6 @@ MonoBehaviour:
   rayDistance: 1
   rayOrigin: {fileID: 2530796431772303073}
   hitOnWall: {fileID: 1738757871484501941}
-  drawingScript: {fileID: 2530796432035345073}
-  movementScript: {fileID: 0}
 --- !u!54 &6631144275977562727
 Rigidbody:
   m_ObjectHideFlags: 0

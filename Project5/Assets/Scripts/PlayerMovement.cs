@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private GameObject[] taggedObjects;
-    [SerializeField] private float closeDistance;
+    [SerializeField] public float closeDistance;
 
     [SerializeField] private Transform CanSpot;
 
@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public bool canWalk = true;
     public bool canLook = true;
 
+    private GameObject closest;
     void Start()
     {
         taggedObjects = GameObject.FindGameObjectsWithTag("Can");
@@ -23,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         cursorLock();
-
 
         if (currentCan == null)
         {
@@ -36,19 +36,23 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DropCan(currentCan);
-                
+
             }
         }
+
+    }
+    private void FixedUpdate()
+    {
+        
     }
 
-   
 
     private void closeToCan()
     {
         for (int i = 0; i < taggedObjects.Length; i++)
         {
             float dist = Vector3.Distance(this.transform.position, taggedObjects[i].transform.position);
-            if ( dist <= closeDistance)
+            if (dist <= closeDistance)
             {
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -56,13 +60,36 @@ public class PlayerMovement : MonoBehaviour
                     currentCan = taggedObjects[i];
                 }
             }
-            else 
+            else
             {
 
-                
+
             }
-        
+
         }
+        //bool isCLose = false;
+        //for (int i = 0; i < taggedObjects.Length; i++)
+        //{
+        //    if (taggedObjects[i].GetComponent<canScript>().Player_close)
+        //    {
+        //        isCLose = true;
+        //    }
+        //}
+        //if (isCLose)
+        //{
+        //    float Dist = Vector3.Distance(this.transform.position, taggedObjects[0].transform.position);
+        //    closest = taggedObjects[0];
+        //    for (int i = 1; i < taggedObjects.Length; i++)
+        //    {
+        //        float dist = Vector3.Distance(this.transform.position, taggedObjects[i].transform.position);
+        //        if (dist < Dist)
+        //        {
+        //            Dist = dist;
+        //            closest = taggedObjects[i];
+        //        }
+        //    }
+        //}
+
     }
 
     private void GrabCan(GameObject Can)
