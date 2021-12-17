@@ -36,5 +36,5 @@ Material:
     - _Emission: 0
     m_Colors:
     - _Color: {r: 1, g: 0, b: 0, a: 1}
-    - _DrawerPos: {r: -85.49371, g: 4.64841, b: -33.339005, a: 0}
+    - _DrawerPos: {r: -84.4895, g: 4.4904103, b: -34.24603, a: 0}
   m_BuildTextureStacks: []

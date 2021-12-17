@@ -228,7 +228,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drawingMat: {fileID: 2100000, guid: ef96f913ef7b74542b6dcca2b8764a45, type: 2}
-  intencity: 70
+  intencity: 150
   color: {r: 1, g: 0, b: 0, a: 1}
   angle: 9
   range: 5
@@ -274,7 +274,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 2
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -309,7 +309,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -5260,12 +5260,12 @@ MonoBehaviour:
   CanColor: {r: 0.07456994, g: 1, b: 0, a: 1}
   canTap: 31
   range: 1
-  controller: {fileID: 0}
-  controller2: {fileID: 0}
-  ControllerDistance: 1
   rayDistance: 1
   rayOrigin: {fileID: 2530796431772303073}
   hitOnWall: {fileID: 1738757871484501941}
+  Player_close: 0
+  deactivateMesh: 0
+  onMission: 0
 --- !u!54 &6631144275977562727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5321,8 +5321,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1.0698801
-  MaxDistance: 329.36722
+  MinDistance: 1
+  MaxDistance: 3
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -5357,7 +5357,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

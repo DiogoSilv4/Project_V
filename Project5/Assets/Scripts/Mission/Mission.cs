@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Mission : MonoBehaviour
 {
 
-    [SerializeField] private string[] missions_names = new string[] { "goTo", "delivery", "paint", "clean" };
+    [SerializeField] private string[] missions_names = new string[] { "goTo", "delivery", "paint", "clean", "final_mission" };
     public List<Mission_things> Missions;
 
 
@@ -16,10 +16,15 @@ public class Mission : MonoBehaviour
     private Texture wall;
     public bool entered = false;
 
-    private Outline outline;
+   
+    private PlayerMovement playerScrpt;
+    private int count_ = 0;
+
     // Start is called before the first frame update
     void Start()
     {
+        playerScrpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+
         for (int i = 0; i < Missions.Count; i++)
         {
             Missions[i].Place.SetActive(false);
@@ -39,6 +44,9 @@ public class Mission : MonoBehaviour
 
             deliveryMission();
 
+        }else if (Missions[currentMissionValue].Type == missions_names[4])
+        {
+            final_task();
         }
 
         if (Missions[currentMissionValue].isCompleted == true)
@@ -67,7 +75,7 @@ public class Mission : MonoBehaviour
             for (int y = 0; y < _wall.height; y++)
             {
                 Color pix = _wall.GetPixel(x, y);
-                if (pix != Color.black)
+                if (pix != new Color (0,0,0,1) )
                 {
                     pix_count++;
                 }
@@ -102,7 +110,7 @@ public class Mission : MonoBehaviour
             for (int y = 0; y < _wall.height; y++)
             {
                 Color pix = _wall.GetPixel(x, y);
-                Debug.Log(pix);
+                //Debug.Log(pix);
                 if (pix == Color.black)
                 {
                     pix_count++;
@@ -210,6 +218,9 @@ public class Mission : MonoBehaviour
         {
             cleanWall();
             entered = true;
+        }else if (Missions[currentMissionValue].Type == missions_names[4])
+        {
+            Missions[currentMissionValue].Place.SetActive(false);
         }
 
     }
@@ -230,14 +241,30 @@ public class Mission : MonoBehaviour
 
     private void enable_outline(GameObject out_object, bool set )
     {
-        outline = out_object.GetComponent<Outline>();
+        out_object.GetComponent<canScript>().onMission = set;
 
-        outline.enabled = set;
+        
     }
-    
+    private void final_task()
+    {
+        if (count_ == 0)
+        {
+            Missions[currentMissionValue].Objects[1].SetActive(false);
+            enable_outline(Missions[currentMissionValue].Objects[0], true);
+            count_++;
+        }
+        
+
+        if (playerScrpt.IsCanGrabbed && playerScrpt.currentCan == Missions[currentMissionValue].Objects[0])
+        {
+            enable_outline(Missions[currentMissionValue].Objects[0], false);
+            MissionCompleted();
+        }
+
+
+    }
     private void TasksCompleted()
     {
-
 
         this.gameObject.SetActive(false);
     }

@@ -18,7 +18,6 @@ public class canScript : MonoBehaviour
 
     //[SerializeField] 
     private Transform controller2;
-
     
     private Outline outline;
 
@@ -33,15 +32,16 @@ public class canScript : MonoBehaviour
     [SerializeField]
     private GameObject hitOnWall;
 
-    
-
-    
     private PlayerMovement movementScript;
 
     private float firstCircleSize;
     private float dist;
     private float dist2;
     public bool Player_close = false;
+
+    public bool deactivateMesh = false;
+
+    public bool onMission = false;
 
     // Start is called before the first frame update
     void Start()
@@ -75,7 +75,7 @@ public class canScript : MonoBehaviour
 
         enableOutline();
 
-
+       
 
         Vector3 startPoint = rayOrigin.position;
 
@@ -112,29 +112,50 @@ public class canScript : MonoBehaviour
 
     private void changeVariable()
     {
-        if (canTap == 6f)
+        if (this.gameObject.name == "GodCan")
         {
-            firstCircleSize = 0.72752f;
+            if (canTap == 6f)
+            {
+                firstCircleSize = 0.72752f;
+            }
+            else if (canTap == 15f)
+            {
+                firstCircleSize = 1.313395f;
+            }
+            else if (canTap == 23f)
+            {
+                firstCircleSize = 2.211007f;
+            }
         }
-        else if (canTap == 15f)
+        else
         {
-            firstCircleSize = 1.313395f;
-        }else if (canTap == 23f)
-        {
-            firstCircleSize = 2.211007f;
+            if (canTap == 6f)
+            {
+                firstCircleSize = 1.7f;
+            }
+            else if (canTap == 15f)
+            {
+                firstCircleSize = 3.3f;
+            }
+            else if (canTap == 23f)
+            {
+                firstCircleSize = 5f;
+            }
         }
+
+        
     }
     private void enableOutline()
     {
 
 
-        if ((dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed)
+        if (   ((dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed) || onMission)
         {
             Player_close = true;
             outline.enabled = true;
 
         }
-        else if ((dist > ControllerDistance && dist2 > ControllerDistance) || movementScript.IsCanGrabbed)
+        else if (  ((dist > ControllerDistance && dist2 > ControllerDistance) || movementScript.IsCanGrabbed)   )
         {
             outline.enabled = false;
             Player_close = false;

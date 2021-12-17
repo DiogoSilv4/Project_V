@@ -7,26 +7,33 @@ public class sounds : MonoBehaviour
 {
     private Slider sounds_slider;
     private AudioSource[] audios;
-    private float slider_value;
+    
     // Start is called before the first frame update
     void Start()
     {
         sounds_slider = GetComponent<Slider>();
         audios = FindObjectsOfType<AudioSource>();
-        slider_value = sounds_slider.value;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (slider_value != sounds_slider.value)
+        
+    }
+
+    public void OnValueChange()
+    {
+        for (int i = 0; i < audios.Length; i++)
         {
-            for (int i = 0; i < audios.Length; i++)
+            if (!audios[i].CompareTag("Music"))
             {
                 audios[i].volume = sounds_slider.value;
             }
-            slider_value = sounds_slider.value;
+            
         }
+        
     }
+    
 }
