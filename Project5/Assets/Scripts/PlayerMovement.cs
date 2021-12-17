@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            GrabCan(currentCan);
+            GrabCan_(currentCan);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -92,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private void GrabCan(GameObject Can)
+    private void GrabCan_(GameObject Can)
     {
         IsCanGrabbed = true;
         Can.transform.position = CanSpot.position;

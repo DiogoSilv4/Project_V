@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Menu : MonoBehaviour
 {
@@ -8,21 +9,28 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private GameObject menu;
 
-    
+    [SerializeField]
+    private GameObject menun_UI;
+
+
     private PlayerMovement PlayerScript;
 
-    [SerializeField]
+    
     private Transform UI;
 
     [SerializeField]
     private Transform placeToBe;
 
-    
+    [SerializeField]
+    private GameObject godUI;
+    [SerializeField]
+    private GameObject script_god;
 
     // Start is called before the first frame update
     void Start()
     {
         PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        UI = menu.transform;
     }
 
     // Update is called once per frame
@@ -41,15 +49,24 @@ public class Menu : MonoBehaviour
     }
     void OpenMenu()
     {
+        if (godUI.active)
+        {
+            script_god.GetComponent<GodCan>().closeGodUI();
+        }
+
         UI.position = placeToBe.position;
         UI.rotation = placeToBe.rotation;
 
         menu.SetActive(true);
+        if (menu.active)
+        {
+            EventSystem.current.SetSelectedGameObject(menun_UI);
+        }
 
         PlayerScript.canWalk = false;
         PlayerScript.canLook = false;
     }
-    void CloseMenu()
+    public void CloseMenu()
     {
         menu.SetActive(false);
 
