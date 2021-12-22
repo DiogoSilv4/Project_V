@@ -21,10 +21,7 @@ public class MySpotDrawer : MonoBehaviour {
 
     void Start()
     {
-       
-       
         range = GetComponentInParent<canScript>().range;
-
     }
 
 

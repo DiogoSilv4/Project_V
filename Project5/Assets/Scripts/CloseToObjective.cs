@@ -6,31 +6,26 @@ public class CloseToObjective : MonoBehaviour
 {
     //[SerializeField] private GameObject prefab;
     [SerializeField] private float ClosingDistance = 15f;
-    [SerializeField] private Transform Objective;
     private Transform player;
-    private Color cillinder;
+    [SerializeField] private GameObject Cillinder;
     private float distance;
     // Start is called before the first frame update
     void Start()
     {
-
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        cillinder = this.gameObject.GetComponent<Renderer>().material.color;
-    }
 
+    }
     // Update is called once per frame
-    void Update()
+    void Update() // It deactives the gameobject when approaching a certain distance from the objective
     {
-        distance = Vector3.Distance(player.position, Objective.position);
+        distance = Vector3.Distance(player.position, this.gameObject.transform.position);
         if (distance <= ClosingDistance)
         {
-            //float transparency = 0;
-            cillinder.a = 0;
-            Debug.Log("InClose");
+            Cillinder.SetActive(false);
         }
         else
         {
-            cillinder.a = 1;
+            Cillinder.SetActive(true);
         }
     }
 }

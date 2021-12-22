@@ -55,14 +55,14 @@ public class MyDrawingController : MonoBehaviour {
     void Update () {
 
         
-        if (uno == 1)
+        if (uno == 1) // if function to start the texture into drawables, otherwise the objects start as black until the user uses can
         {
             foreach (var drawable in drawablesInScene)
                 spot.Draw(drawable);
             uno++;
         }
 
-        if (Vector3.Distance(posLastFrame , transform.position )/Time.deltaTime > magnitudeOfVelocityToSound)
+        if (Vector3.Distance(posLastFrame , transform.position )/Time.deltaTime > magnitudeOfVelocityToSound) // function to perform the audio of the can shaking
         {
             //Debug.Log("YEss");
             Can_shake.mute = false;
@@ -77,13 +77,13 @@ public class MyDrawingController : MonoBehaviour {
 
 
 
-        //if (ovrGrabable.isGrabbed && OVRInput.GetDown(sprayButton) )
-        //{
-
-        //}
-
-        CanGrabbed = plyrScpt.IsCanGrabbed;
-        can = plyrScpt.currentCan;
+        
+        if (plyrScpt != null) // if the game is not being played in VR
+        {
+            CanGrabbed = plyrScpt.IsCanGrabbed;
+            can = plyrScpt.currentCan;
+        }
+        
         
 
 
@@ -107,5 +107,20 @@ public class MyDrawingController : MonoBehaviour {
 
 
 
+    }
+    public void Paint_enabled()
+    {
+        spot.UpdateDrawingMat();
+
+        foreach (var drawable in drawablesInScene)
+            spot.Draw(drawable);
+
+        sprayPaint.SetActive(true);
+        Paint_Spray.mute = false;
+    }
+    public void Paint_disabled()
+    {
+        sprayPaint.SetActive(false);
+        Paint_Spray.mute = true;
     }
 }

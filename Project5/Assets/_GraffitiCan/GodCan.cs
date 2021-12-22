@@ -6,116 +6,121 @@ using UnityEngine.EventSystems;
 
 public class GodCan : MonoBehaviour
 {
-    
-    private PlayerMovement plyrScpt;
-
+    private PlayerMovement plyrScpt = null;
     [SerializeField]
     private Menu menuScript;
-
-
-
     private bool CanGrabbed;
     private bool thisOne = false;
     private GameObject can;
-
     public FlexibleColorPicker picker;
     public GameObject background;
-
     [SerializeField]
     private GameObject menu_ui;
-
     [SerializeField]
     private GameObject GodCanUI;
-
     [SerializeField]
     private GameObject eventS;
-
     [SerializeField]
     private Transform UI;
-
-    [SerializeField]
     private Transform placeToBe;
-
-
     [SerializeField]
     private GameObject menu_screen;
     [SerializeField]
     private GameObject menu_gameobject;
-
     public bool GodUI_open = false;
-
 
     // Start is called before the first frame update
     void Start()
     {
         picker.color = Color.yellow;
-
-        plyrScpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-
+        placeToBe = GameObject.Find("UI_menu").transform;
+        if (GameObject.FindGameObjectWithTag("Player").name == "Player_PC")
+        {
+            plyrScpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
-        CanGrabbed = plyrScpt.IsCanGrabbed;
-        can =  plyrScpt.currentCan;
-        
-        if (can == this.gameObject && CanGrabbed)
+        if (plyrScpt != null)  // if the game is being played in VR
         {
-            thisOne = true;
-            //Debug.Log("GodCan");
+            CanGrabbed = plyrScpt.IsCanGrabbed;
+            can = plyrScpt.currentCan;
+            if (can == this.gameObject && CanGrabbed)
+            {
+                thisOne = true;
+            }
+            else
+            {
+                thisOne = false;
+            }
+            if (thisOne && Input.GetKeyDown(KeyCode.N))
+            {
+                if (menu_screen.activeSelf)
+                {
+                    menu_gameobject.GetComponent<Menu>().CloseMenu();
+                }
+                UI.position = placeToBe.position;
+                UI.rotation = placeToBe.rotation;
+                menu_ui.SetActive(!menu_ui.activeInHierarchy);
+                GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+                if (GodCanUI.activeSelf)
+                {
+                    EventSystem.current.SetSelectedGameObject(eventS);
+                }
+                plyrScpt.canWalk = !plyrScpt.canWalk;
+                plyrScpt.canLook = !plyrScpt.canLook;
+            }
+            else if (!thisOne)
+            {
+                GodCanUI.SetActive(false);
+            }
+            else if (!thisOne && !menuScript.isOpen)
+            {
+                plyrScpt.canWalk = true;
+                plyrScpt.canLook = true;
+            }
+            background.GetComponent<Image>().color = picker.color;
+            this.GetComponent<canScript>().CanColor = picker.color;
         }
-        else
+    }
+    public void closeGodUI()
+    {
+        menu_ui.SetActive(!menu_ui.activeInHierarchy);
+        GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+        if (plyrScpt != null)
         {
-            thisOne = false;
+            plyrScpt.canWalk = !plyrScpt.canWalk;
+            plyrScpt.canLook = !plyrScpt.canLook;
         }
-
-        if (thisOne && Input.GetKeyDown(KeyCode.N))
+     
+    }
+    public void canGod_selected()
+    {
+    
+        if ( Input.GetKeyDown(KeyCode.N)  )
         {
-            if (menu_screen.active)
+            if (menu_screen.activeSelf)
             {
                 menu_gameobject.GetComponent<Menu>().CloseMenu();
             }
             UI.position = placeToBe.position;
             UI.rotation = placeToBe.rotation;
-
             menu_ui.SetActive(!menu_ui.activeInHierarchy);
             GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
-
-            if (GodCanUI.active)
+            if (GodCanUI.activeSelf)
             {
                 EventSystem.current.SetSelectedGameObject(eventS);
             }
-
-
-            //Debug.Log("OpenUI");
-            plyrScpt.canWalk = !plyrScpt.canWalk;
-            plyrScpt.canLook = !plyrScpt.canLook;
-
-        }
-        else if (!thisOne)
-        {
-            GodCanUI.SetActive(false);
            
-
-        }
-        else if(!thisOne && !menuScript.isOpen)
-        {
-            plyrScpt.canWalk = true;
-            plyrScpt.canLook = true;
         }
 
         background.GetComponent<Image>().color = picker.color;
         this.GetComponent<canScript>().CanColor = picker.color;
-
     }
-    public void closeGodUI()
+    public void canGodDiselectd()
     {
-    
-        menu_ui.SetActive(!menu_ui.activeInHierarchy);
-        GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+        GodCanUI.SetActive(false); 
 
-        plyrScpt.canWalk = !plyrScpt.canWalk;
-        plyrScpt.canLook = !plyrScpt.canLook;
     }
 }

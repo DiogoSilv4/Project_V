@@ -8,19 +8,11 @@ public class Menu : MonoBehaviour
     public bool isOpen = false;
     [SerializeField]
     private GameObject menu;
-
     [SerializeField]
     private GameObject menun_UI;
-
-
-    private PlayerMovement PlayerScript;
-
-    
+    private PlayerMovement PlayerScript = null;
     private Transform UI;
-
-    [SerializeField]
     private Transform placeToBe;
-
     [SerializeField]
     private GameObject godUI;
     [SerializeField]
@@ -29,8 +21,12 @@ public class Menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        if (GameObject.FindGameObjectWithTag("Player").name == "Player_PC")
+        {
+            PlayerScript = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        }
         UI = menu.transform;
+        placeToBe = GameObject.Find("UI_menu").transform;
     }
 
     // Update is called once per frame
@@ -49,7 +45,7 @@ public class Menu : MonoBehaviour
     }
     void OpenMenu()
     {
-        if (godUI.active)
+        if (godUI.activeSelf)
         {
             script_god.GetComponent<GodCan>().closeGodUI();
         }
@@ -58,13 +54,15 @@ public class Menu : MonoBehaviour
         UI.rotation = placeToBe.rotation;
 
         menu.SetActive(true);
-        if (menu.active)
+        if (menu.activeSelf)
         {
             EventSystem.current.SetSelectedGameObject(menun_UI);
         }
-
-        PlayerScript.canWalk = false;
-        PlayerScript.canLook = false;
+        if (PlayerScript != null)
+        {
+            PlayerScript.canWalk = false;
+            PlayerScript.canLook = false;
+        }
     }
     public void CloseMenu()
     {

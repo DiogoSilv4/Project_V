@@ -320,15 +320,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70a6f9b95511432ba28ada2441499da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  plyrScpt: {fileID: 0}
-  LookScript: {fileID: 0}
   menuScript: {fileID: 0}
   picker: {fileID: 0}
   background: {fileID: 0}
+  menu_ui: {fileID: 0}
   GodCanUI: {fileID: 0}
   eventS: {fileID: 0}
   UI: {fileID: 0}
   placeToBe: {fileID: 0}
+  menu_screen: {fileID: 0}
+  menu_gameobject: {fileID: 0}
+  GodUI_open: 0
 --- !u!114 &1462716991843215481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,15 +347,13 @@ MonoBehaviour:
   CanColor: {r: 0, g: 1, b: 0, a: 1}
   canTap: 15
   range: 1
-  controller: {fileID: 0}
-  controller2: {fileID: 0}
-  ControllerDistance: 1
   rayDistance: 1.5
   rayOrigin: {fileID: 8361280770669013460}
   hitOnWall: {fileID: 2997819599928605841}
-  drawingScript: {fileID: 5374930565005732228}
-  movementScript: {fileID: 0}
---- !u!114 &8967106332979153245
+  Player_close: 0
+  deactivateMesh: 0
+  onMission: 0
+--- !u!114 &8723935889979157282
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -362,16 +362,103 @@ MonoBehaviour:
   m_GameObject: {fileID: 2452020921979816906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d61468f8b77ae4b92c344bc9a600fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_allowOffhandGrab: 1
-  m_snapPosition: 0
-  m_snapOrientation: 0
-  m_snapOffset: {fileID: 0}
-  m_grabPoints:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CustomReticle: {fileID: 0}
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_AttachTransform: {fileID: 0}
+  m_AttachEaseInTime: 0.15
+  m_MovementType: 2
+  m_VelocityDamping: 1
+  m_VelocityScale: 1
+  m_AngularVelocityDamping: 1
+  m_AngularVelocityScale: 1
+  m_TrackPosition: 1
+  m_SmoothPosition: 0
+  m_SmoothPositionAmount: 5
+  m_TightenPosition: 0.5
+  m_TrackRotation: 1
+  m_SmoothRotation: 0
+  m_SmoothRotationAmount: 5
+  m_TightenRotation: 0.5
+  m_ThrowOnDetach: 1
+  m_ThrowSmoothingDuration: 0.25
+  m_ThrowSmoothingCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_ThrowVelocityScale: 1.5
+  m_ThrowAngularVelocityScale: 1
+  m_ForceGravityOnDetach: 0
+  m_RetainTransformParent: 1
+  m_AttachPointCompatibilityMode: 0
 --- !u!64 &4222211533809262376
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5320,7 +5407,6 @@ MonoBehaviour:
   Can_shake: {fileID: 5115946599216691773}
   sprayButton: 0
   magnitudeOfVelocityToSound: 12
-  plyrScpt: {fileID: 0}
   ThisCan: {fileID: 2452020921979816906}
 --- !u!82 &5115946599216691773
 AudioSource:
@@ -5557,6 +5643,12 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 3d9e019dd0825467c8a7d7c2bd6e98fd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3242244b1f3e45c1afd60fe58ecb896, type: 3}
+--- !u!4 &2975899298507428208 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d3242244b1f3e45c1afd60fe58ecb896,
+    type: 3}
+  m_PrefabInstance: {fileID: 3370449370672789147}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1414306896364748473 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4424396828587804706, guid: d3242244b1f3e45c1afd60fe58ecb896,
@@ -5572,12 +5664,6 @@ GameObject:
 --- !u!1 &7284693703834142822 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3756473180518285571, guid: d3242244b1f3e45c1afd60fe58ecb896,
-    type: 3}
-  m_PrefabInstance: {fileID: 3370449370672789147}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &2975899298507428208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d3242244b1f3e45c1afd60fe58ecb896,
     type: 3}
   m_PrefabInstance: {fileID: 3370449370672789147}
   m_PrefabAsset: {fileID: 0}
