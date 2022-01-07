@@ -8,7 +8,7 @@ using System.Linq;
 
 public class Hand : MonoBehaviour
 {
-    public XRController controller = null;
+    [SerializeField] private XRController controller;
     public Animator m_animator = null;
 
     public const string ANIM_LAYER_NAME_POINT = "Point Layer";
