@@ -11986,7 +11986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6bf904e410ee8479f9093d8830d1f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LocomotionProvider: {fileID: 1729018348}
+  m_LocomotionProvider: {fileID: 0}
   m_MinHeight: 1
   m_MaxHeight: 2
 --- !u!143 &293645957
@@ -77631,7 +77631,6 @@ GameObject:
   - component: {fileID: 1729018349}
   - component: {fileID: 1729018351}
   - component: {fileID: 1729018348}
-  - component: {fileID: 1729018352}
   m_Layer: 6
   m_Name: Locomotion System
   m_TagString: Untagged
@@ -77646,7 +77645,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729018347}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01f69dc1cb084aa42b2f2f8cd87bc770, type: 3}
   m_Name: 
@@ -77720,21 +77719,6 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
     m_Reference: {fileID: -8198699208435500284, guid: c348712bda248c246b8c49b3db54643f, type: 3}
---- !u!114 &1729018352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1729018347}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82bada5cd4493694eb05900bc9108e20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  actionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  rayInteractor: {fileID: 1906673070}
-  provider: {fileID: 1729018348}
 --- !u!1 &1729512499
 GameObject:
   m_ObjectHideFlags: 0
@@ -92485,7 +92469,7 @@ MonoBehaviour:
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 2147483647
-  m_CustomReticle: {fileID: 0}
+  m_CustomReticle: {fileID: 7384667168492517936, guid: f29edc9737e75f34ebf761ca851762b5, type: 3}
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls: []
