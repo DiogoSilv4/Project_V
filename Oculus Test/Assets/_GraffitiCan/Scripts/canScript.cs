@@ -115,7 +115,7 @@ public class canScript : MonoBehaviour
 
                 Debug.DrawLine(startPoint, objectHit.point, Color.green);
                 hitOnWall.SetActive(true);
-                hitOnWall.transform.position = objectHit.point + objectHit.normal * 0.2f;
+                hitOnWall.transform.position = objectHit.point + objectHit.normal * 0.00001f;
                 hitOnWall.transform.forward = objectHit.normal;
                 hitOnWall.transform.localScale = new Vector3(1, 1, 1) * (objectHit.distance * firstCircleSize / 0.768f);
             }else 
@@ -132,15 +132,15 @@ public class canScript : MonoBehaviour
         {
             if (canTap == 6f)
             {
-                firstCircleSize = 0.72752f;
+                firstCircleSize = 0.0972752f;
             }
             else if (canTap == 15f)
             {
-                firstCircleSize = 1.313395f;
+                firstCircleSize = 0.1370122f;
             }
             else if (canTap == 23f)
             {
-                firstCircleSize = 2.211007f;
+                firstCircleSize = 0.4370122f;
             }
         }
         else

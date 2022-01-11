@@ -36,8 +36,10 @@ namespace AnyUI
 		[Tooltip("If you need a camera other than the 'Main Camera' to interact with the projected canvas, set it here")]
         public Camera UseCamera;
         public LineRenderer theLine;
-        
-        
+
+
+        private bool useVR = false;//true;
+
         public override Camera eventCamera
         {
             get
@@ -68,41 +70,16 @@ namespace AnyUI
 
         public override void Raycast(PointerEventData eventData, List<RaycastResult> resultAppendList)
         {
+            if (useVR) 
+            {
+                VR_UIRaycast(eventData, resultAppendList);
+            }
+
             Collider c = GetComponent<Collider>();
-#if VRTK_VERSION_3_2_1_OR_NEWER
-            
-            RaycastResult current = eventData.pointerCurrentRaycast;
-            RaycastResult press = eventData.pointerPressRaycast;
-            
 
-
-
-            Ray rCurrent = new Ray(current.worldPosition, current.worldNormal);
-            Ray rLast = new Ray(vrtkLastPointerPos, vrtkLastPointerDir);
-            Ray rPress = new Ray(press.worldPosition, press.worldNormal);
-
-            vrtkLastPointerPos = current.worldPosition == Vector3.zero ? vrtkLastPointerPos : current.worldPosition;
-            vrtkLastPointerDir = current.worldNormal == Vector3.zero ? vrtkLastPointerDir : current.worldNormal;
-
-
-            //make the canvas "valid" for VRTK_VRInputModule.ValidElement(...) method
-            if (CanvasToProject.GetComponent<AnyUiFakeVRTKCanvas>() == null)
-                CanvasToProject.gameObject.AddComponent<AnyUiFakeVRTKCanvas>();
-#else
 			Ray rCurrent = eventCamera.ScreenPointToRay(eventData.position);
 			Ray rLast = eventCamera.ScreenPointToRay(eventData.position - eventData.delta);
 			Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
-#endif
-            /*if (GameObject.FindGameObjectWithTag("Player").name != "Player_PC") 
-            {
-                RaycastResult current = eventData.pointerCurrentRaycast;
-                RaycastResult press = eventData.pointerPressRaycast;
-
-                Ray rCurrent = new Ray(current.worldPosition, current.worldNormal);
-                Ray rLast = new Ray(current.worldPosition, current.worldNormal);
-                Ray rPress = new Ray(press.worldPosition, press.worldNormal);
-            }*/
-           
 
 
             RaycastHit i;
@@ -145,6 +122,52 @@ namespace AnyUI
                 resultAppendList.AddRange(results);
             }
         }
+
+        private void VR_UIRaycast(PointerEventData eventData, List<RaycastResult> resultAppendList)
+        {
+            Collider c = GetComponent<Collider>();
+
+            GameObject rightHand = GameObject.FindWithTag("RightHand");
+            if (rightHand == null)
+                return;
+
+            // rCurrent needs the right hand
+            Ray rCurrent = eventCamera.ScreenPointToRay(rightHand.transform.forward);
+            //Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
+
+            // TODO: get position of either hands forward vector and stick it above with a distance
+
+            RaycastHit i;
+
+            receiver.InputPossible = false;
+            //perform raycast against this object, append results
+            if (rCurrent.direction != Vector3.zero && c.Raycast(rCurrent, out i, float.MaxValue)) {
+                //hit, tell canvas
+                receiver.InputPossible = true;
+
+                PointerEventData pData = eventData;
+
+                Vector2 guiPos = i.textureCoord;
+                Vector3 screenPoint = receiver.eventCamera.ViewportToScreenPoint(guiPos);
+                //update hover position
+                pData.position = new Vector2(screenPoint.x, screenPoint.y);
+
+
+                //update press position
+                //if (rPress.direction != Vector3.zero && c.Raycast(rPress, out i, float.MaxValue)) {
+                //    guiPos = i.textureCoord;
+                //    screenPoint = receiver.eventCamera.ViewportToScreenPoint(guiPos);
+                //    pData.pressPosition = new Vector2(screenPoint.x, screenPoint.y);
+                //}
+
+                List<RaycastResult> results = new List<RaycastResult>();
+                receiver.setPointerEventDataHashMask(pData.GetHashCode());
+                //continue raycast on GUI
+                receiver.Raycast(pData, results);
+                resultAppendList.AddRange(results);
+            }
+        }
+
 
         private bool GetVRXButton() {
             var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();

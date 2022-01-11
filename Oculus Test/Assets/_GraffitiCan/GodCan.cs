@@ -18,8 +18,7 @@ public class GodCan : MonoBehaviour
     private GameObject menu_ui;
     [SerializeField]
     private GameObject GodCanUI;
-    [SerializeField]
-    private GameObject eventS;
+
     [SerializeField]
     private Transform UI;
     private Transform placeToBe;
@@ -65,12 +64,10 @@ public class GodCan : MonoBehaviour
                 }
                 UI.position = placeToBe.position;
                 UI.rotation = placeToBe.rotation;
+
                 menu_ui.SetActive(!menu_ui.activeInHierarchy);
                 GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
-                if (GodCanUI.activeSelf)
-                {
-                    EventSystem.current.SetSelectedGameObject(eventS);
-                }
+
                 plyrScpt.canWalk = !plyrScpt.canWalk;
                 plyrScpt.canLook = !plyrScpt.canLook;
             }
@@ -100,12 +97,10 @@ public class GodCan : MonoBehaviour
                 }
                 UI.position = placeToBe.position;
                 UI.rotation = placeToBe.rotation;
-                menu_ui.SetActive(!menu_ui.activeInHierarchy);
+
+                //menu_ui.SetActive(!menu_ui.activeInHierarchy);
                 GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
-                if (GodCanUI.activeSelf)
-                {
-                    EventSystem.current.SetSelectedGameObject(eventS);
-                }
+
 
             }
 
