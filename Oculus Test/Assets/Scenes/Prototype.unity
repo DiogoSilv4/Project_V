@@ -52861,6 +52861,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9111138004605411620, guid: 7f3279e53acd74df499c30594c8a716a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9111138005156484909, guid: 7f3279e53acd74df499c30594c8a716a, type: 3}
       propertyPath: m_Name
       value: UI_ChangeColor
@@ -73858,7 +73862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6166589217769009615, guid: 3642f1d2d5f92439c8fa9f06274aaf81, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000091552734
+      value: -0.00012588501
       objectReference: {fileID: 0}
     - target: {fileID: 6198754051873023527, guid: 3642f1d2d5f92439c8fa9f06274aaf81, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

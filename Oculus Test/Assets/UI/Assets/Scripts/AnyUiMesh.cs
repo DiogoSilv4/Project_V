@@ -35,7 +35,7 @@ namespace AnyUI
         public bool UseMaterialLayering = true;
 		[Tooltip("If you need a camera other than the 'Main Camera' to interact with the projected canvas, set it here")]
         public Camera UseCamera;
-		
+        public LineRenderer theLine;
         
         
         public override Camera eventCamera
@@ -89,17 +89,20 @@ namespace AnyUI
             if (CanvasToProject.GetComponent<AnyUiFakeVRTKCanvas>() == null)
                 CanvasToProject.gameObject.AddComponent<AnyUiFakeVRTKCanvas>();
 #else
-            //Ray rCurrent = eventCamera.ScreenPointToRay(eventData.position);
-            //Ray rLast = eventCamera.ScreenPointToRay(eventData.position - eventData.delta);
-            //Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
+			Ray rCurrent = eventCamera.ScreenPointToRay(eventData.position);
+			Ray rLast = eventCamera.ScreenPointToRay(eventData.position - eventData.delta);
+			Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
 #endif
+            /*if (GameObject.FindGameObjectWithTag("Player").name != "Player_PC") 
+            {
+                RaycastResult current = eventData.pointerCurrentRaycast;
+                RaycastResult press = eventData.pointerPressRaycast;
 
-            RaycastResult current = eventData.pointerCurrentRaycast;
-            RaycastResult press = eventData.pointerPressRaycast;
-
-            Ray rCurrent = new Ray(current.worldPosition, current.worldNormal);
-            Ray rLast = new Ray(current.worldPosition, current.worldNormal);
-            Ray rPress = new Ray(press.worldPosition, press.worldNormal);
+                Ray rCurrent = new Ray(current.worldPosition, current.worldNormal);
+                Ray rLast = new Ray(current.worldPosition, current.worldNormal);
+                Ray rPress = new Ray(press.worldPosition, press.worldNormal);
+            }*/
+           
 
 
             RaycastHit i;
@@ -156,6 +159,9 @@ namespace AnyUI
 
             return isXPressed;
         }
+        private Ray rayFromHand() {
+            return new Ray();
+		}
 
     }
     
