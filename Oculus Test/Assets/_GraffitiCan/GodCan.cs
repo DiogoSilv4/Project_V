@@ -29,7 +29,7 @@ public class GodCan : MonoBehaviour
     private GameObject menu_gameobject;
     public bool GodUI_open = false;
 
-    private bool isHeld = false;
+    public bool isHeld = false;
     private int toggle = 0;
 
     // Start is called before the first frame update

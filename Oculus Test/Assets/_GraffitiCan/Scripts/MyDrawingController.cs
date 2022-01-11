@@ -11,7 +11,6 @@ public class MyDrawingController : MonoBehaviour {
     public AudioSource Paint_Spray;
     public AudioSource Can_shake;
 
-
     //private OVRGrabbable ovrGrabable;
     //public OVRInput.Button sprayButton;
     private Vector3 posLastFrame;
@@ -96,14 +95,16 @@ public class MyDrawingController : MonoBehaviour {
             foreach (var drawable in drawablesInScene)
                 spot.Draw(drawable);
 
-            sprayPaint.SetActive(true);
+            //sprayPaint.SetActive(true);
+            sprayPaint.GetComponent<ParticleSystem>()?.Play();
             Paint_Spray.mute = false;
             
 
         }
         else
         {
-            sprayPaint.SetActive(false);
+            //sprayPaint.SetActive(false);
+            sprayPaint.GetComponent<ParticleSystem>()?.Stop();
             Paint_Spray.mute = true;
         }
 
@@ -115,7 +116,8 @@ public class MyDrawingController : MonoBehaviour {
             foreach (var drawable in drawablesInScene)
                 spot.Draw(drawable);
 
-            sprayPaint.SetActive(true);
+            //sprayPaint.SetActive(true);
+            sprayPaint.GetComponent<ParticleSystem>()?.Play();
             Paint_Spray.mute = false;
 
         }
@@ -130,14 +132,16 @@ public class MyDrawingController : MonoBehaviour {
         foreach (var drawable in drawablesInScene)
             spot.Draw(drawable);
 
-        sprayPaint.SetActive(true);
+        //sprayPaint.SetActive(true);
+        sprayPaint.GetComponent<ParticleSystem>()?.Play();
         Paint_Spray.mute = false;
     }
     public void Paint_disabled()
     {
         vr_control_enabled = false;
 
-        sprayPaint.SetActive(false);
+        //sprayPaint.SetActive(false);
+        sprayPaint.GetComponent<ParticleSystem>()?.Stop();
         Paint_Spray.mute = true;
     }
 }

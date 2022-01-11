@@ -19,11 +19,13 @@ public class Mission : MonoBehaviour
    
     private PlayerMovement playerScrpt;
     private int count_ = 0;
+    private GodCan God_can;
 
     // Start is called before the first frame update
     void Start()
     {
         playerScrpt = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        God_can = GameObject.Find("GodCan").GetComponent<GodCan>();
 
         for (int i = 0; i < Missions.Count; i++)
         {
@@ -31,7 +33,7 @@ public class Mission : MonoBehaviour
         }
         AbleObjectives();
 
-       
+        
     }
 
     // Update is called once per frame
@@ -141,12 +143,17 @@ public class Mission : MonoBehaviour
         {
 
             enable_outline(Missions[currentMissionValue].Objects[i], true);
-            if (checkDistance(Missions[currentMissionValue].Objects[i], Missions[currentMissionValue].Place.transform)
-                && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsCanGrabbed == false)
+            GameObject place = Missions[currentMissionValue].Place;
+            if (place != null) 
             {
-                count++;
-                enable_outline(Missions[currentMissionValue].Objects[i], false);
+                if (checkDistance(Missions[currentMissionValue].Objects[i], Missions[currentMissionValue].Place.transform)
+                    )//& GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsCanGrabbed == false) 
+                {
+                    count++;
+                    enable_outline(Missions[currentMissionValue].Objects[i], false);
+                }
             }
+
         }
         if (count == Missions[currentMissionValue].Objects.Length)
         {
@@ -255,7 +262,8 @@ public class Mission : MonoBehaviour
         }
         
 
-        if (playerScrpt.IsCanGrabbed && playerScrpt.currentCan == Missions[currentMissionValue].Objects[0])
+        //if (playerScrpt.IsCanGrabbed && playerScrpt.currentCan == Missions[currentMissionValue].Objects[0])
+        if (Missions[currentMissionValue].Objects[0] != null && God_can.isHeld)
         {
             enable_outline(Missions[currentMissionValue].Objects[0], false);
             MissionCompleted();
