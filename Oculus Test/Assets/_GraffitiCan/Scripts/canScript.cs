@@ -24,7 +24,7 @@ public class canScript : MonoBehaviour
      private float ControllerDistance ;
 
     [SerializeField]
-    private float rayDistance = 1.35f;
+    private float rayDistance = 3f;
 
     [SerializeField]
     private Transform rayOrigin = null;

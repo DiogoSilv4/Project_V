@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 
 using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 namespace AnyUI
 {
@@ -88,10 +89,19 @@ namespace AnyUI
             if (CanvasToProject.GetComponent<AnyUiFakeVRTKCanvas>() == null)
                 CanvasToProject.gameObject.AddComponent<AnyUiFakeVRTKCanvas>();
 #else
-            Ray rCurrent = eventCamera.ScreenPointToRay(eventData.position);
-            Ray rLast = eventCamera.ScreenPointToRay(eventData.position - eventData.delta);
-            Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
+            //Ray rCurrent = eventCamera.ScreenPointToRay(eventData.position);
+            //Ray rLast = eventCamera.ScreenPointToRay(eventData.position - eventData.delta);
+            //Ray rPress = eventCamera.ScreenPointToRay(eventData.pressPosition);
 #endif
+
+            RaycastResult current = eventData.pointerCurrentRaycast;
+            RaycastResult press = eventData.pointerPressRaycast;
+
+            Ray rCurrent = new Ray(current.worldPosition, current.worldNormal);
+            Ray rLast = new Ray(current.worldPosition, current.worldNormal);
+            Ray rPress = new Ray(press.worldPosition, press.worldNormal);
+
+
             RaycastHit i;
 
             receiver.InputPossible = false;
@@ -133,53 +143,21 @@ namespace AnyUI
             }
         }
 
+        private bool GetVRXButton() {
+            var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();
+            var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+            UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
+
+            bool isXPressed = false;
+            foreach (var device in leftHandedControllers) {
+                if (device.IsPressed(UnityEngine.XR.Interaction.Toolkit.InputHelpers.Button.TriggerButton, out isXPressed))
+                    break;
+            }
+
+            return isXPressed;
+        }
+
     }
-#if VRTK_VERSION_3_2_1_OR_NEWER
-
-    public class AnyUiFakeVRTKCanvas : VRTK.VRTK_UICanvas
-    {
-
-        protected override void OnEnable()
-        {
-        }
-
-        protected override void OnDisable()
-        {
-        }
-
-        protected override void OnDestroy()
-        {
-        }
-
-        protected override void OnTriggerEnter(Collider collider)
-        {
-           
-        }
-
-        protected override void OnTriggerExit(Collider collider)
-        {
-           
-        }
-
-        protected override void SetupCanvas()
-        {
-        }
-
-        protected override IEnumerator CreateDraggablePanel(Canvas canvas, Vector2 canvasSize)
-        {
-            yield return null;
-        }
-
-        protected override void CreateActivator(Canvas canvas, Vector2 canvasSize)
-        {
-            
-        }
-
-        protected override void RemoveCanvas()
-        {
-            
-        }
-    }
-#endif
+    
 
 }

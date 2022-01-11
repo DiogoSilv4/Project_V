@@ -30,6 +30,7 @@ public class GodCan : MonoBehaviour
     public bool GodUI_open = false;
 
     private bool isHeld = false;
+    private int toggle = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -90,9 +91,9 @@ public class GodCan : MonoBehaviour
         if(isHeld)
         {
 
-            if (Input.GetKeyDown(KeyCode.N) || GetVRXButton())
+            if ( (Input.GetKeyDown(KeyCode.N) || GetVRXButton()) && toggle == 0) 
             {
-
+                toggle = 1;
                 if (menu_screen.activeSelf)
                 {
                     menu_gameobject.GetComponent<Menu>().CloseMenu();
@@ -107,6 +108,10 @@ public class GodCan : MonoBehaviour
                 }
 
             }
+
+			if (!GetVRXButton()) {
+                toggle = 0;
+			}
 
             background.GetComponent<Image>().color = picker.color;
             this.GetComponent<canScript>().CanColor = picker.color;
@@ -140,7 +145,7 @@ public class GodCan : MonoBehaviour
     private bool GetVRXButton()
     {
         var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();
-        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Left | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand  | UnityEngine.XR.InputDeviceCharacteristics.Controller;
         UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
 
         bool isXPressed = false;
