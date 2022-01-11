@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class Menu : MonoBehaviour
 {
@@ -32,12 +33,12 @@ public class Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M) && isOpen == false)
+        if (  (Input.GetKeyDown(KeyCode.M) || GetVRXButton()) && isOpen == false)
         {
             isOpen = true;
             OpenMenu();
 
-        }else if (Input.GetKeyDown(KeyCode.M) && isOpen == true)
+        }else if ((Input.GetKeyDown(KeyCode.M) || GetVRXButton()) && isOpen == true)
         {
             isOpen = false;
             CloseMenu();
@@ -71,5 +72,20 @@ public class Menu : MonoBehaviour
         PlayerScript.canWalk = true;
         PlayerScript.canLook = true;
 
+    }
+    private bool GetVRXButton()
+    {
+        var leftHandedControllers = new List<UnityEngine.XR.InputDevice>();
+        var desiredCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.HeldInHand | UnityEngine.XR.InputDeviceCharacteristics.Right | UnityEngine.XR.InputDeviceCharacteristics.Controller;
+        UnityEngine.XR.InputDevices.GetDevicesWithCharacteristics(desiredCharacteristics, leftHandedControllers);
+
+        bool isXPressed = false;
+        foreach (var device in leftHandedControllers)
+        {
+            if (device.IsPressed(InputHelpers.Button.PrimaryButton, out isXPressed))
+                break;
+        }
+
+        return isXPressed;
     }
 }
