@@ -103,7 +103,14 @@ public class canScript : MonoBehaviour
                 hitOnWall.SetActive(false);
             }
         }
-
+        if (onMission)
+        {
+            VR_enableOutline();
+        }
+        else
+        {
+            VR_disableOutline();
+        }
         if (updateReticlePosition) 
         {
             Vector3 startPoint = rayOrigin.position;
