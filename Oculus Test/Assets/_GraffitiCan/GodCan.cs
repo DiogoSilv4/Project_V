@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit;
+using HSVPicker;
 public class GodCan : MonoBehaviour
 {
     private PlayerMovement plyrScpt = null;
@@ -12,7 +13,7 @@ public class GodCan : MonoBehaviour
     private bool CanGrabbed;
     private bool thisOne = false;
     private GameObject can;
-    public FlexibleColorPicker picker;
+    public ColorPicker picker;
     public GameObject background;
     [SerializeField]
     private GameObject menu_ui;
@@ -34,7 +35,9 @@ public class GodCan : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        picker.color = Color.yellow;
+        
+
+        picker._color = Color.yellow;
         placeToBe = GameObject.FindGameObjectWithTag("go_ui_place").transform;
         if (GameObject.FindGameObjectWithTag("Player").name == "Player_PC")
         {
@@ -80,12 +83,12 @@ public class GodCan : MonoBehaviour
                 plyrScpt.canWalk = true;
                 plyrScpt.canLook = true;
             }
-            background.GetComponent<Image>().color = picker.color;
-            this.GetComponent<canScript>().CanColor = picker.color;
+            background.GetComponent<Image>().color = picker._color;
+            this.GetComponent<canScript>().CanColor = picker._color;
         }
 
 
-        if(isHeld)
+        if(isHeld || Input.GetKeyDown(KeyCode.N))
         {
 
             if ( (Input.GetKeyDown(KeyCode.N) || GetVRXButton()) && toggle == 0) 
@@ -99,8 +102,9 @@ public class GodCan : MonoBehaviour
                 UI.rotation = placeToBe.rotation;
 
                 //menu_ui.SetActive(!menu_ui.activeInHierarchy);
-                GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
 
+                GodCanUI.SetActive(!GodCanUI.activeInHierarchy);
+                EventSystem.current.SetSelectedGameObject(GodCanUI);
 
             }
 
@@ -108,8 +112,8 @@ public class GodCan : MonoBehaviour
                 toggle = 0;
 			}
 
-            background.GetComponent<Image>().color = picker.color;
-            this.GetComponent<canScript>().CanColor = picker.color;
+            background.GetComponent<Image>().color = picker._color;
+            this.GetComponent<canScript>().CanColor = picker._color;
         }
     }
     public void closeGodUI()
