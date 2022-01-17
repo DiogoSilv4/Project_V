@@ -50,6 +50,7 @@ public class Mission : MonoBehaviour
         {
             final_task();
         }
+        
 
         if (Missions[currentMissionValue].isCompleted == true)
         {
@@ -142,7 +143,7 @@ public class Mission : MonoBehaviour
         for(int i = 0; i < Missions[currentMissionValue].Objects.Length; i++)
         {
 
-            enable_outline(Missions[currentMissionValue].Objects[i], true);
+            enable_outline(Missions[currentMissionValue].Objects[i], 1);
             GameObject place = Missions[currentMissionValue].Place;
             if (place != null) 
             {
@@ -150,7 +151,7 @@ public class Mission : MonoBehaviour
                     )//& GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsCanGrabbed == false) 
                 {
                     count++;
-                    enable_outline(Missions[currentMissionValue].Objects[i], false);
+                    enable_outline(Missions[currentMissionValue].Objects[i], 2);
                 }
             }
 
@@ -241,12 +242,10 @@ public class Mission : MonoBehaviour
             {
                 Missions[currentMissionValue].Place.SetActive(true);
             }
-            
         }
-
     }
 
-    private void enable_outline(GameObject out_object, bool set )
+    private void enable_outline(GameObject out_object, int set )
     {
         out_object.GetComponent<canScript>().onMission = set;
 
@@ -257,7 +256,7 @@ public class Mission : MonoBehaviour
         if (count_ == 0)
         {
             Missions[currentMissionValue].Objects[1].SetActive(false);
-            enable_outline(Missions[currentMissionValue].Objects[0], true);
+            enable_outline(Missions[currentMissionValue].Objects[0], 1);
             count_++;
         }
         
@@ -265,7 +264,7 @@ public class Mission : MonoBehaviour
         //if (playerScrpt.IsCanGrabbed && playerScrpt.currentCan == Missions[currentMissionValue].Objects[0])
         if (Missions[currentMissionValue].Objects[0] != null && God_can.isHeld)
         {
-            enable_outline(Missions[currentMissionValue].Objects[0], false);
+            enable_outline(Missions[currentMissionValue].Objects[0], 2);
             MissionCompleted();
         }
 
