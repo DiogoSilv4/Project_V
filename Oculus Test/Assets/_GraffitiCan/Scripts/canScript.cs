@@ -42,7 +42,7 @@ public class canScript : MonoBehaviour
 
     public bool deactivateMesh = false;
 
-    public bool onMission = false;
+    public int onMission = 0;
 
     private bool updateReticlePosition = false;
 
@@ -103,14 +103,14 @@ public class canScript : MonoBehaviour
                 hitOnWall.SetActive(false);
             }
         }
-        if (onMission)
+        if (onMission == 1)
         {
             VR_enableOutline();
-        }
-        else
+        }else if (onMission == 2)
         {
             VR_disableOutline();
         }
+        
         if (updateReticlePosition) 
         {
             Vector3 startPoint = rayOrigin.position;
@@ -172,7 +172,7 @@ public class canScript : MonoBehaviour
     {
 
 
-        if (   ((dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed) || onMission)
+        if (   ((dist <= ControllerDistance || dist2 <= ControllerDistance) && !movementScript.IsCanGrabbed) || onMission == 1)
         {
             Player_close = true;
             outline.enabled = true;
