@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class canScript : MonoBehaviour
 {
@@ -45,6 +46,11 @@ public class canScript : MonoBehaviour
     public int onMission = 0;
 
     private bool updateReticlePosition = false;
+
+    [SerializeField]
+    private GameObject lefthand;
+    [SerializeField]
+    private GameObject righthand;
 
     // Start is called before the first frame update
     void Start()
@@ -198,9 +204,31 @@ public class canScript : MonoBehaviour
     {
         
         updateReticlePosition = true;
+
+
+        
+        
+
     }
     public void VR_OnCanNOTGrabbed()
     {
         updateReticlePosition = false;
+        hitOnWall.SetActive(false);
+        
+        
+
+    }
+
+    public void DisableLeftRay() {
+        lefthand.GetComponent<XRInteractorLineVisual>().enabled = false;
+    }
+    public void EnableLeftRay() {
+        lefthand.GetComponent<XRInteractorLineVisual>().enabled = true;
+    }
+    public void DisableRightRay() {
+        righthand.GetComponent<XRInteractorLineVisual>().enabled = false;
+    }
+    public void EnableRightRay() {
+        righthand.GetComponent<XRInteractorLineVisual>().enabled = true;
     }
 }

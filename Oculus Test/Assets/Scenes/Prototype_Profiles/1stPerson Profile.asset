@@ -33,7 +33,7 @@ MonoBehaviour:
     value: 100
   distanceFade:
     overrideState: 1
-    value: 0.5
+    value: 0.468
   vignette:
     overrideState: 1
     value: 0.5
@@ -64,7 +64,7 @@ MonoBehaviour:
     value: {x: 0.5, y: 0.5}
   intensity:
     overrideState: 1
-    value: 0.149
+    value: 0.241
   smoothness:
     overrideState: 1
     value: 1
@@ -118,35 +118,35 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 2.34
+    value: 10.3
   threshold:
     overrideState: 1
-    value: 3.72
+    value: 3.7
   softKnee:
     overrideState: 1
     value: 0.577
   clamp:
     overrideState: 1
-    value: 65472
+    value: 65469.15
   diffusion:
     overrideState: 1
-    value: 4.74
+    value: 4.89
   anamorphicRatio:
     overrideState: 1
-    value: 0.072
+    value: -0.034
   color:
     overrideState: 1
     value: {r: 1, g: 1, b: 1, a: 1}
   fastMode:
     overrideState: 1
-    value: 0
+    value: 1
   dirtTexture:
     overrideState: 0
     value: {fileID: 0}
     defaultState: 1
   dirtIntensity:
-    overrideState: 1
-    value: 3.7
+    overrideState: 0
+    value: 3.28
 --- !u!114 &432626186262791617
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -196,7 +196,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.09
+    value: 0.89
   color:
     overrideState: 1
     value: {r: 0, g: 0, b: 0, a: 1}
@@ -214,7 +214,7 @@ MonoBehaviour:
     value: -12
   thicknessModifier:
     overrideState: 1
-    value: 3.69
+    value: 5.73
   directLightingStrength:
     overrideState: 0
     value: 0
@@ -277,7 +277,7 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 0
-    value: 0
+    value: 1.5
   tint:
     overrideState: 0
     value: -26.5
@@ -289,13 +289,13 @@ MonoBehaviour:
     value: -0
   saturation:
     overrideState: 1
-    value: 7.9
+    value: 6.3
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 1.37
+    value: 1.51
   contrast:
     overrideState: 1
     value: 7.1

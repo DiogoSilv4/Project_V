@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2176251979228582147}
   - component: {fileID: 135835571761938661}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2530796431772303074}
   - component: {fileID: 2530796431772303075}
   - component: {fileID: 2530796431772303072}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 2530796432035345072}
   - component: {fileID: 2530796432035345073}
   - component: {fileID: 5126929520210429903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 'CanSpot '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   - component: {fileID: 2530796432562249690}
   - component: {fileID: 2530796432562249700}
   - component: {fileID: 2530796432562249701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5169,7 +5169,7 @@ GameObject:
   - component: {fileID: 2358220524563269585}
   - component: {fileID: 4447762539992575598}
   - component: {fileID: 6056841616635073156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Can
   m_TagString: Can
   m_Icon: {fileID: 0}
@@ -5265,6 +5265,8 @@ MonoBehaviour:
   Player_close: 0
   deactivateMesh: 0
   onMission: 0
+  lefthand: {fileID: 0}
+  righthand: {fileID: 0}
 --- !u!54 &6631144275977562727
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5460,6 +5462,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 2530796431244109340}
+        m_TargetAssemblyTypeName: canScript, Assembly-CSharp
+        m_MethodName: VR_disableOutline
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -5587,7 +5601,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6154894722972746860}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Can Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5602,7 +5616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8734596554933150527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0647, y: 0.299, z: -0.0195}
+  m_LocalPosition: {x: -0.003, y: 0.299, z: -0.043}
   m_LocalScale: {x: 0.049034562, y: 0.049034566, z: 0.049034562}
   m_Children: []
   m_Father: {fileID: 2636163305952451335}
